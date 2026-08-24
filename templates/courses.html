@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}
+Courses | VIJAY Educational Services
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-hero">
+
+<span class="eyebrow">
+● OUR PATHWAYS
+</span>
+
+
+<h1>
+
+Learning with
+
+<br>
+
+<em>
+purpose.
+</em>
+
+</h1>
+
+
+<p>
+
+Choose a pathway designed around
+where you are now and where you
+want to go next.
+
+</p>
+
+</section>
+
+
+
+<section class="courses-list">
+
+
+{% for c in courses %}
+
+
+<article class="course-large">
+
+
+<div class="course-number">
+
+0{{ loop.index }}
+
+</div>
+
+
+<div class="course-content">
+
+
+<small>
+
+THE PATHWAY ·
+{{ c.category }}
+
+</small>
+
+
+<h2>
+
+{{ c.title }}
+
+</h2>
+
+
+<p>
+
+{{ c.description }}
+
+</p>
+
+
+<button
+class="text-button"
+data-open-enroll
+>
+
+Register interest →
+
+</button>
+
+
+</div>
+
+
+<div class="course-details">
+
+
+<small>
+DURATION
+</small>
+
+<strong>
+{{ c.duration }}
+</strong>
+
+
+<small>
+DETAILS
+</small>
+
+<strong>
+{{ c.start }}
+</strong>
+
+<strong>
+{{ c.fee }}
+</strong>
+
+<strong>
+{{ c.classes }}
+</strong>
+
+
+<small>
+INCLUDES
+</small>
+
+
+{% for item in c.includes %}
+
+<span>
+✓ {{ item }}
+</span>
+
+{% endfor %}
+
+
+</div>
+
+
+</article>
+
+
+{% endfor %}
+
+
+</section>
+
+{% endblock %}

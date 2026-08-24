@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VIJAY Educational Services</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="icon"
+          href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
+
+            <div class="logo-box">
+
+                <img src="{{ url_for('static', filename='images/logo.png') }}"
+                     alt="VIJAY Educational Services">
+
+            </div>
+
+            <div class="logo-text">
+
+                <h3>VIJAY</h3>
+
+                <span>EDUCATIONAL SERVICES</span>
+
+            </div>
+
+        </a>
+
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="#about">About</a>
+
+            <a href="#courses">Courses</a>
+
+            <a href="#careers">Careers</a>
+
+            <a href="#contact">Contact</a>
+
+            <button class="btn btn-primary"
+                    onclick="openEnrollment()">
+
+                Enroll now →
+
+            </button>
+
+        </div>
+
+
+        <button class="menu-toggle"
+                onclick="toggleMenu()">
+
+            ☰
+
+        </button>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+
+        <!-- LEFT -->
+
+        <div class="hero-left">
+
+            <div class="eyebrow">
+
+                LEARNING, ELEVATED
+
+            </div>
+
+
+            <h1>
+
+                Your next chapter
+
+                <br>
+
+                <em>starts here.</em>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Online education for entrance and foundation —
+                designed to turn ambition into academic momentum.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <button class="btn btn-primary"
+                        onclick="openEnrollment()">
+
+                    Begin your journey →
+
+                </button>
+
+
+                <a href="#courses"
+                   class="text-link">
+
+                    <span class="play-icon">▶</span>
+
+                    Explore courses
+
+                </a>
+
+            </div>
+
+
+            <div class="community">
+
+                <div class="community-icons">
+
+                    <span>V</span>
+                    <span>J</span>
+                    <span>+</span>
+
+                </div>
+
+                <div>
+
+                    <small>Join a community</small>
+
+                    <strong>built for progress.</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div class="hero-visual">
+
+
+            <div class="orbit"></div>
+
+            <div class="orbit orbit-two"></div>
+
+
+            <div class="graduation-cap">
+
+                <div class="cap-top"></div>
+
+                <div class="cap-body"></div>
+
+                <div class="cap-letter">V</div>
+
+                <div class="cap-tassel"></div>
+
+            </div>
+
+
+            <div class="floating-card card-top">
+
+                ✧ CURIOUS
+
+                <br>
+
+                <strong>MINDS</strong>
+
+            </div>
+
+
+            <div class="floating-card card-bottom">
+
+                LEARN
+
+                <strong>03</strong>
+
+                FORWARD
+
+            </div>
+
+
+            <div class="hero-brand">
+
+                <strong>VIJAY</strong>
+
+                <span>EDUCATIONAL SERVICES</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+    <div class="stats-grid">
+
+        <div class="stat">
+
+            <div class="stat-number">01</div>
+
+            <div class="stat-text">
+
+                Clear, concept-first
+                <br>
+                learning paths
+
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">24/7</div>
+
+            <div class="stat-text">
+
+                Access to your
+                <br>
+                learning community
+
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">1:1</div>
+
+            <div class="stat-text">
+
+                Mentorship that
+                <br>
+                moves you forward
+
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-text">
+
+                <strong>
+
+                    VIJAY × YOUR
+                    <br>
+                    POTENTIAL
+
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+
+            <div class="about-card">
+
+                <div class="established">
+
+                    <small>EST.</small>
+
+                    <strong>2024</strong>
+
+                </div>
+
+
+                <div class="book-icon">
+
+                    ♧
+
+                </div>
+
+
+                <div class="motion-text">
+
+                    IDEAS<br>
+
+                    IN<br>
+
+                    <span>MOTION</span>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="eyebrow">
+
+                    ABOUT VIJAY
+
+                </div>
+
+
+                <h2 class="section-title">
+
+                    Education should
+
+                    <br>
+
+                    open <em>doors.</em>
+
+                </h2>
+
+
+                <p class="about-text">
+
+                    At VIJAY Educational Services, we believe
+                    the right learning environment can change
+                    the way a student sees their own future.
+
+                </p>
+
+
+                <p class="about-text">
+
+                    We bring together clear teaching,
+                    thoughtful mentorship and a community
+                    that keeps you moving.
+
+                </p>
+
+
+                <p class="about-text">
+
+                    No noise. No shortcuts.
+                    Just a better way to learn, prepare
+                    and take your next step.
+
+                </p>
+
+
+                <a href="#faculty"
+                   class="text-link">
+
+                    Meet our faculty →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COURSES / PATHWAYS
+===================================================== -->
+
+<section class="pathways" id="courses">
+
+    <div class="container">
+
+
+        <div class="pathway-header">
+
+            <div>
+
+                <div class="eyebrow">
+
+                    OUR PATHWAYS
+
+                </div>
+
+
+                <h2 class="section-title">
+
+                    Learning with
+
+                    <br>
+
+                    <em>purpose.</em>
+
+                </h2>
+
+            </div>
+
+
+            <p class="pathway-description">
+
+                Whether you are building strong foundations
+                or preparing for a defining entrance, find
+                a pathway that meets you where you are.
+
+            </p>
+
+        </div>
+
+
+        <!-- TABS -->
+
+        <div class="pathway-tabs">
+
+            <div class="pathway-tab active"
+                 onclick="showCourse('entrance')">
+
+                <span>01 / FOCUS</span>
+
+                <strong>
+
+                    Entrance Exam Preparation
+
+                </strong>
+
+                <span>→</span>
+
+            </div>
+
+
+            <div class="pathway-tab"
+                 onclick="showCourse('foundation')">
+
+                <span>02 / BUILD</span>
+
+                <strong>
+
+                    Foundation Courses
+
+                </strong>
+
+                <span>→</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ENTRANCE COURSE -->
+
+        <div class="course-card"
+             id="entranceCourse">
+
+            <div>
+
+                <div class="course-number">
+
+                    01
+
+                </div>
+
+
+                <div class="course-label">
+
+                    THE PATHWAY
+
+                </div>
+
+
+                <h3 class="course-title">
+
+                    Entrance Exam Preparation
+
+                </h3>
+
+
+                <p class="course-description">
+
+                    A structured, mentor-led pathway for
+                    students preparing to enter their next
+                    academic chapter with confidence.
+
+                </p>
+
+
+                <br>
+
+
+                <button class="btn btn-primary"
+                        onclick="openEnrollment('Entrance Exam Preparation')">
+
+                    Register interest →
+
+                </button>
+
+            </div>
+
+
+            <div class="course-details">
+
+                <div class="detail-label">
+
+                    DURATION
+
+                </div>
+
+                <div class="detail-value">
+
+                    6–12 months
+
+                </div>
+
+
+                <div class="detail-label">
+
+                    DETAILS
+
+                </div>
+
+                <div class="detail-value">
+
+                    Sample: January 2025
+
+                    <br><br>
+
+                    Sample: ₹24,000
+
+                    <br><br>
+
+                    Classes 10–12
+
+                </div>
+
+
+                <div class="detail-label">
+
+                    INCLUDES
+
+                </div>
+
+
+                <ul class="course-list">
+
+                    <li>
+
+                        Weekly live classes
+
+                    </li>
+
+                    <li>
+
+                        Mock tests & progress reviews
+
+                    </li>
+
+                    <li>
+
+                        Personal academic guidance
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOUNDATION COURSE -->
+
+        <div class="course-card"
+             id="foundationCourse"
+             style="display:none;">
+
+            <div>
+
+                <div class="course-number">
+
+                    02
+
+                </div>
+
+
+                <div class="course-label">
+
+                    THE PATHWAY
+
+                </div>
+
+
+                <h3 class="course-title">
+
+                    Foundation Courses
+
+                </h3>
+
+
+                <p class="course-description">
+
+                    Build strong academic fundamentals
+                    through concept-focused learning,
+                    regular practice and personal guidance.
+
+                </p>
+
+
+                <br>
+
+
+                <button class="btn btn-primary"
+                        onclick="openEnrollment('Foundation Courses')">
+
+                    Register interest →
+
+                </button>
+
+            </div>
+
+
+            <div class="course-details">
+
+                <div class="detail-label">
+
+                    DURATION
+
+                </div>
+
+                <div class="detail-value">
+
+                    3–12 months
+
+                </div>
+
+
+                <div class="detail-label">
+
+                    DETAILS
+
+                </div>
+
+                <div class="detail-value">
+
+                    Classes 6–10
+
+                    <br><br>
+
+                    Concept-focused curriculum
+
+                    <br><br>
+
+                    Flexible learning
+
+                </div>
+
+
+                <div class="detail-label">
+
+                    INCLUDES
+
+                </div>
+
+
+                <ul class="course-list">
+
+                    <li>
+
+                        Concept-based classes
+
+                    </li>
+
+                    <li>
+
+                        Weekly assessments
+
+                    </li>
+
+                    <li>
+
+                        Academic mentorship
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FACULTY
+===================================================== -->
+
+<section class="faculty"
+         id="faculty">
+
+    <div class="container">
+
+        <div class="faculty-grid">
+
+
+            <div>
+
+                <div class="eyebrow">
+
+                    JOIN THE FACULTY
+
+                </div>
+
+
+                <h2 class="section-title">
+
+                    Good teaching
+
+                    <br>
+
+                    changes <em>everything.</em>
+
+                </h2>
+
+
+                <p class="faculty-description">
+
+                    We are building a faculty of patient
+                    thinkers, excellent communicators and
+                    people who genuinely care about what
+                    happens next for a student.
+
+                </p>
+
+
+                <button class="btn btn-outline"
+                        onclick="openFaculty()">
+
+                    Share your profile
+                    →
+                    
+                </button>
+
+            </div>
+
+
+            <div class="faculty-list">
+
+
+                <div class="faculty-item"
+                     onclick="openFaculty('Subject Faculty')">
+
+                    <div class="faculty-number">
+
+                        01
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Subject Faculty
+
+                        </h3>
+
+                        <p>
+
+                            Shape minds through mastery.
+
+                        </p>
+
+                    </div>
+
+                    <div class="faculty-arrow">
+
+                        ⌄
+
+                    </div>
+
+                </div>
+
+
+                <div class="faculty-item"
+                     onclick="openFaculty('Academic Mentors')">
+
+                    <div class="faculty-number">
+
+                        02
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Academic Mentors
+
+                        </h3>
+
+                        <p>
+
+                            Make every student feel seen.
+
+                        </p>
+
+                    </div>
+
+                    <div class="faculty-arrow">
+
+                        ⌄
+
+                    </div>
+
+                </div>
+
+
+                <div class="faculty-item"
+                     onclick="openFaculty('Learning Designers')">
+
+                    <div class="faculty-number">
+
+                        03
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+
+                            Learning Designers
+
+                        </h3>
+
+                        <p>
+
+                            Build what makes learning stick.
+
+                        </p>
+
+                    </div>
+
+                    <div class="faculty-arrow">
+
+                        ⌄
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer"
+        id="contact">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <h3>VIJAY</h3>
+
+                <p>
+
+                    VIJAY Educational Services
+
+                </p>
+
+                <p>
+
+                    Learning. Mentorship.
+                    Progress.
+
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Explore</h3>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#courses">Courses</a>
+                    </li>
+
+                    <li>
+                        <a href="#faculty">Careers</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Courses</h3>
+
+                <ul class="footer-links">
+
+                    <li>
+
+                        <a href="#courses">
+
+                            Entrance Preparation
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#courses">
+
+                            Foundation Courses
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contact</h3>
+
+                <ul class="footer-links">
+
+                    <li>
+
+                        <a href="tel:+919999999999">
+
+                            Call us
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="https://wa.me/919999999999">
+
+                            WhatsApp
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="mailto:info@vijayeducation.com">
+
+                            Email
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 VIJAY Educational Services.
+            All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     ENROLLMENT MODAL
+===================================================== -->
+
+<div class="modal"
+     id="enrollmentModal">
+
+    <div class="modal-box">
+
+
+        <button class="modal-close"
+                onclick="closeEnrollment()">
+
+            ×
+
+        </button>
+
+
+        <div class="eyebrow">
+
+            START HERE
+
+        </div>
+
+
+        <h2 class="modal-title">
+
+            Let's make
+
+            <br>
+
+            <em>progress.</em>
+
+        </h2>
+
+
+        <p class="modal-subtitle">
+
+            Tell us a little about your goals.
+            We'll help you find the right pathway.
+
+        </p>
+
+
+        <div id="enrollmentMessage"></div>
+
+
+        <form action="/enroll"
+              method="POST">
+
+
+            <div class="form-group">
+
+                <label>FULL NAME</label>
+
+                <input type="text"
+                       name="name"
+                       placeholder="Your name"
+                       required>
+
+            </div>
+
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label>EMAIL</label>
+
+                    <input type="email"
+                           name="email"
+                           placeholder="you@example.com"
+                           required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>PHONE</label>
+
+                    <input type="tel"
+                           name="phone"
+                           placeholder="Your number"
+                           required>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>INTERESTED IN</label>
+
+                <select name="course"
+                        id="courseSelect">
+
+                    <option>
+
+                        Entrance Exam Preparation
+
+                    </option>
+
+                    <option>
+
+                        Foundation Courses
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+
+                    ANYTHING WE SHOULD KNOW?
+
+                </label>
+
+                <small>optional</small>
+
+                <textarea name="message"
+                          placeholder="Tell us about your goals..."></textarea>
+
+            </div>
+
+
+            <button type="submit"
+                    class="btn btn-primary form-submit">
+
+                Register my interest →
+
+            </button>
+
+        </form>
+
+
+        <div class="modal-contact">
+
+            ☎ Call us
+
+            &nbsp;&nbsp;&nbsp;
+
+            💬 WhatsApp
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FACULTY MODAL
+===================================================== -->
+
+<div class="modal"
+     id="facultyModal">
+
+    <div class="modal-box">
+
+
+        <button class="modal-close"
+                onclick="closeFaculty()">
+
+            ×
+
+        </button>
+
+
+        <div class="eyebrow">
+
+            FACULTY APPLICATION
+
+        </div>
+
+
+        <h2 class="modal-title">
+
+            Teach what
+
+            <br>
+
+            <em>matters.</em>
+
+        </h2>
+
+
+        <p class="modal-subtitle">
+
+            Tell us about yourself and attach your CV.
+            We're always looking for people who care
+            deeply about learning.
+
+        </p>
+
+
+        <form action="/faculty"
+              method="POST"
+              enctype="multipart/form-data">
+
+
+            <div class="form-group">
+
+                <label>FULL NAME</label>
+
+                <input type="text"
+                       name="name"
+                       required>
+
+            </div>
+
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label>EMAIL</label>
+
+                    <input type="email"
+                           name="email"
+                           required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>PHONE</label>
+
+                    <input type="tel"
+                           name="phone"
+                           required>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>ROLE</label>
+
+                <select name="role">
+
+                    <option>
+
+                        Subject Faculty
+
+                    </option>
+
+                    <option>
+
+                        Academic Mentors
+
+                    </option>
+
+                    <option>
+
+                        Learning Designers
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>CV / RESUME</label>
+
+                <input type="file"
+                       name="cv"
+                       accept=".pdf,.doc,.docx"
+                       required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>SHORT NOTE</label>
+
+                <small>optional</small>
+
+                <textarea name="note"></textarea>
+
+            </div>
+
+
+            <button type="submit"
+                    class="btn btn-primary form-submit">
+
+                Send profile →
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+function toggleMenu() {
+
+    const nav = document.getElementById("navLinks");
+
+    nav.classList.toggle("active");
+
+}
+
+
+function openEnrollment(course = "") {
+
+    const modal =
+        document.getElementById("enrollmentModal");
+
+    modal.classList.add("active");
+
+
+    if (course) {
+
+        document.getElementById("courseSelect").value =
+            course;
+
+    }
+
+}
+
+
+function closeEnrollment() {
+
+    document.getElementById("enrollmentModal")
+        .classList.remove("active");
+
+}
+
+
+function openFaculty(role = "") {
+
+    const modal =
+        document.getElementById("facultyModal");
+
+    modal.classList.add("active");
+
+
+    if (role) {
+
+        const roleSelect =
+            document.querySelector(
+                '#facultyModal select[name="role"]'
+            );
+
+        if (roleSelect) {
+
+            roleSelect.value = role;
+
+        }
+
+    }
+
+}
+
+
+function closeFaculty() {
+
+    document.getElementById("facultyModal")
+        .classList.remove("active");
+
+}
+
+
+function showCourse(course) {
+
+    const entrance =
+        document.getElementById("entranceCourse");
+
+    const foundation =
+        document.getElementById("foundationCourse");
+
+    const tabs =
+        document.querySelectorAll(".pathway-tab");
+
+
+    tabs.forEach(tab => {
+
+        tab.classList.remove("active");
+
+    });
+
+
+    if (course === "entrance") {
+
+        entrance.style.display = "grid";
+
+        foundation.style.display = "none";
+
+        tabs[0].classList.add("active");
+
+    }
+
+    else {
+
+        entrance.style.display = "none";
+
+        foundation.style.display = "grid";
+
+        tabs[1].classList.add("active");
+
+    }
+
+}
+
+
+/* Close modal when clicking outside */
+
+window.addEventListener("click", function(event) {
+
+    const enrollment =
+        document.getElementById("enrollmentModal");
+
+    const faculty =
+        document.getElementById("facultyModal");
+
+
+    if (event.target === enrollment) {
+
+        closeEnrollment();
+
+    }
+
+
+    if (event.target === faculty) {
+
+        closeFaculty();
+
+    }
+
+});
+
+
+/* ESC key */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        closeEnrollment();
+
+        closeFaculty();
+
+    }
+
+});
+
+
+/* Scroll reveal */
+
+const revealElements =
+    document.querySelectorAll(
+        ".about-card, .about-grid > div, .course-card, .faculty-item"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.15
+        }
+
+    );
+
+
+revealElements.forEach(element => {
+
+    element.classList.add("reveal");
+
+    observer.observe(element);
+
+});
+
+</script>
+
+
+</body>
+</html>

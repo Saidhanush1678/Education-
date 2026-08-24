@@ -1,0 +1,81 @@
+.community {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 55px;
+}
+
+.community-icons {
+    display: flex;
+}
+
+.community-icons span {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -5px;
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--navy);
+    color: white;
+    border: 2px solid var(--cream);
+}
+
+.community-icons span:first-child {
+    background: #4aa4d8;
+}
+
+.community-icons span:nth-child(2) {
+    background: var(--green);
+}
+
+.community small {
+    display: block;
+    color: #84919a;
+    font-size: 11px;
+}
+
+.community strong {
+    display: block;
+    font-size: 12px;
+}
+
+.hero-brand {
+    position: absolute;
+    right: 50px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 2px;
+}
+
+.hero-brand strong {
+    font-size: 11px;
+}
+
+.hero-brand span {
+    color: var(--green);
+    font-size: 7px;
+    margin-top: 4px;
+}
+
+.modal-contact {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #6f7e87;
+}
+
+.modal-contact::first-letter {
+    color: var(--green);
+}
+
+.form-group small {
+    display: block;
+    color: #8b969d;
+    font-size: 10px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,345 @@
+{% extends "base.html" %}
+
+{% block title %}
+Careers | VIJAY Educational Services
+{% endblock %}
+
+
+{% block content %}
+
+
+<section class="careers section-pale">
+
+
+<div class="careers-copy">
+
+
+<span class="eyebrow">
+● JOIN THE FACULTY
+</span>
+
+
+<h1>
+
+Good teaching
+
+<br>
+
+changes
+<em>
+everything.
+</em>
+
+</h1>
+
+
+<p>
+
+We are building a faculty of
+patient thinkers, excellent
+communicators and people who
+genuinely care about what happens
+next for a student.
+
+</p>
+
+
+<button
+class="btn btn-outline"
+data-open-faculty
+>
+
+Share your profile
+
+<span>
+↗
+</span>
+
+</button>
+
+
+</div>
+
+
+
+<div class="roles">
+
+
+<button
+class="role"
+data-role="Subject Faculty"
+>
+
+<span>
+01
+</span>
+
+
+<div>
+
+<strong>
+Subject Faculty
+</strong>
+
+<small>
+Shape minds through mastery.
+</small>
+
+</div>
+
+
+<b>
+⌄
+</b>
+
+</button>
+
+
+
+<button
+class="role"
+data-role="Academic Mentor"
+>
+
+<span>
+02
+</span>
+
+
+<div>
+
+<strong>
+Academic Mentors
+</strong>
+
+<small>
+Make every student feel seen.
+</small>
+
+</div>
+
+
+<b>
+⌄
+</b>
+
+</button>
+
+
+
+<button
+class="role"
+data-role="Learning Designer"
+>
+
+<span>
+03
+</span>
+
+
+<div>
+
+<strong>
+Learning Designers
+</strong>
+
+<small>
+Build what makes learning stick.
+</small>
+
+</div>
+
+
+<b>
+⌄
+</b>
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- FACULTY MODAL -->
+
+<div
+class="modal"
+id="facultyModal"
+aria-hidden="true"
+>
+
+
+<div
+class="modal-backdrop"
+data-close-faculty
+></div>
+
+
+<div class="modal-card faculty-modal">
+
+
+<button
+class="modal-close"
+data-close-faculty
+>
+×
+</button>
+
+
+<span class="eyebrow">
+● FACULTY APPLICATION
+</span>
+
+
+<h2>
+
+Teach what
+
+<br>
+
+<em>
+matters.
+</em>
+
+</h2>
+
+
+<p>
+
+Tell us about yourself and attach
+your CV. We’re always looking for
+people who care deeply about learning.
+
+</p>
+
+
+<form
+action="{{ url_for('faculty_apply') }}"
+method="post"
+enctype="multipart/form-data"
+>
+
+
+<label>
+
+Full name
+
+<input
+name="full_name"
+required
+>
+
+</label>
+
+
+<div class="form-grid">
+
+
+<label>
+
+Email
+
+<input
+type="email"
+name="email"
+required
+>
+
+</label>
+
+
+<label>
+
+Phone
+
+<input
+name="phone"
+required
+>
+
+</label>
+
+
+</div>
+
+
+<label>
+
+Role
+
+<select
+name="role"
+id="roleSelect"
+>
+
+<option>
+Subject Faculty
+</option>
+
+<option>
+Academic Mentor
+</option>
+
+<option>
+Learning Designer
+</option>
+
+</select>
+
+</label>
+
+
+<label>
+
+CV / Resume
+
+<input
+type="file"
+name="cv"
+accept=".pdf,.doc,.docx"
+>
+
+</label>
+
+
+<label>
+
+Short note
+
+<small>
+optional
+</small>
+
+<textarea
+name="note"
+></textarea>
+
+</label>
+
+
+<button
+class="btn btn-dark full"
+type="submit"
+>
+
+Send profile
+<span>
+→
+</span>
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+{% endblock %}
