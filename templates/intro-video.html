@@ -7,7 +7,7 @@
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     >
 
     <title>VIJAY Educational Services</title>
@@ -31,16 +31,26 @@
 
         .video-page {
             width: 100%;
-            height: 100vh;
+            height: 100dvh;
+            min-height: 100vh;
             position: relative;
             background: #000;
+            overflow: hidden;
         }
 
-        video {
+        .video-page video {
+            position: absolute;
+            inset: 0;
+
             width: 100%;
             height: 100%;
+
             object-fit: cover;
+            object-position: center;
+
             display: block;
+
+            background: #000;
         }
 
         .overlay {
@@ -50,12 +60,14 @@
             background:
                 linear-gradient(
                     90deg,
-                    rgba(0,0,0,0.20),
-                    rgba(0,0,0,0.02),
-                    rgba(0,0,0,0.20)
+                    rgba(0,0,0,0.15),
+                    rgba(0,0,0,0.00),
+                    rgba(0,0,0,0.15)
                 );
 
             pointer-events: none;
+
+            z-index: 2;
         }
 
         .top-logo {
@@ -74,27 +86,27 @@
             z-index: 10;
 
             text-shadow:
-                0 2px 10px rgba(0,0,0,0.7);
+                0 2px 10px rgba(0,0,0,0.8);
         }
 
         .skip-button {
             position: absolute;
 
-            right: 35px;
             top: 35px;
+            right: 35px;
 
             padding: 10px 20px;
 
             border:
                 1px solid
-                rgba(255,255,255,0.6);
+                rgba(255,255,255,0.7);
 
             border-radius: 25px;
 
             color: white;
 
             background:
-                rgba(0,0,0,0.35);
+                rgba(0,0,0,0.30);
 
             cursor: pointer;
 
@@ -103,9 +115,10 @@
             font-size: 13px;
             font-weight: 600;
 
-            transition: 0.3s;
+            transition: all 0.3s ease;
 
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         .skip-button:hover {
@@ -127,10 +140,10 @@
 
             border:
                 1px solid
-                rgba(255,255,255,0.6);
+                rgba(255,255,255,0.7);
 
             background:
-                rgba(0,0,0,0.35);
+                rgba(0,0,0,0.30);
 
             color: white;
 
@@ -140,9 +153,10 @@
 
             font-size: 18px;
 
-            transition: 0.3s;
+            transition: all 0.3s ease;
 
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         .sound-button:hover {
@@ -176,65 +190,105 @@
                 width 0.1s linear;
         }
 
-        .loading-message {
-            position: absolute;
-
-            left: 50%;
-            top: 50%;
-
-            transform:
-                translate(-50%, -50%);
-
-            color: white;
-
-            font-size: 14px;
-
-            letter-spacing: 2px;
-
-            text-align: center;
-
-            z-index: 4;
-
-            opacity: 0.8;
-
-            pointer-events: none;
-
-            text-shadow:
-                0 2px 10px rgba(0,0,0,0.8);
-        }
-
         @media (max-width: 768px) {
 
-            .top-logo {
-                left: 25px;
-                top: 25px;
+            .video-page {
+                height: 100dvh;
+                min-height: 100vh;
+            }
 
-                font-size: 20px;
+            .video-page video {
+                width: 100%;
+                height: 100%;
+
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .top-logo {
+                top: 20px;
+                left: 20px;
+
+                font-size: 19px;
+                letter-spacing: 3px;
             }
 
             .skip-button {
-                right: 20px;
-                top: 20px;
+                top: 18px;
+                right: 18px;
 
-                padding:
-                    9px
-                    16px;
+                padding: 8px 15px;
 
-                font-size: 12px;
+                font-size: 11px;
+
+                border-radius: 20px;
             }
 
             .sound-button {
-                right: 20px;
+                right: 18px;
                 bottom: 25px;
 
                 width: 44px;
                 height: 44px;
+
+                font-size: 16px;
             }
 
-            .loading-message {
-                font-size: 11px;
+            .progress {
+                height: 3px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .top-logo {
+                top: 18px;
+                left: 16px;
+
+                font-size: 17px;
             }
 
+            .skip-button {
+                top: 15px;
+                right: 15px;
+
+                padding: 7px 13px;
+
+                font-size: 10px;
+            }
+
+            .sound-button {
+                right: 15px;
+                bottom: 22px;
+
+                width: 42px;
+                height: 42px;
+            }
+        }
+
+        @media (orientation: landscape) and (max-height: 600px) {
+
+            .top-logo {
+                top: 15px;
+                left: 20px;
+
+                font-size: 18px;
+            }
+
+            .skip-button {
+                top: 15px;
+                right: 20px;
+
+                padding: 7px 14px;
+            }
+
+            .sound-button {
+                right: 20px;
+                bottom: 18px;
+
+                width: 40px;
+                height: 40px;
+            }
         }
 
     </style>
@@ -250,6 +304,7 @@
             autoplay
             muted
             playsinline
+            webkit-playsinline
             preload="auto"
         >
 
@@ -257,8 +312,6 @@
                 src="{{ url_for('static', filename='videos/vijay-intro.mp4') }}"
                 type="video/mp4"
             >
-
-            Your browser does not support HTML5 video.
 
         </video>
 
@@ -272,6 +325,7 @@
 
 
         <button
+            type="button"
             class="skip-button"
             onclick="goHome()"
         >
@@ -279,15 +333,8 @@
         </button>
 
 
-        <div
-            class="loading-message"
-            id="loadingMessage"
-        >
-            Loading Introduction...
-        </div>
-
-
         <button
+            type="button"
             class="sound-button"
             id="soundButton"
             onclick="toggleSound()"
@@ -324,22 +371,6 @@
             document.getElementById(
                 "soundButton"
             );
-
-        const loadingMessage =
-            document.getElementById(
-                "loadingMessage"
-            );
-
-
-        video.addEventListener(
-            "loadeddata",
-            function () {
-
-                loadingMessage.style.display =
-                    "none";
-
-            }
-        );
 
 
         video.addEventListener(
@@ -382,15 +413,13 @@
 
                 video.muted = false;
 
-                soundButton.innerHTML =
-                    "🔊";
+                soundButton.innerHTML = "🔊";
 
             } else {
 
                 video.muted = true;
 
-                soundButton.innerHTML =
-                    "🔇";
+                soundButton.innerHTML = "🔇";
 
             }
 
@@ -405,15 +434,40 @@
         }
 
 
-        video.addEventListener(
-            "error",
-            function () {
+        function startVideo() {
 
-                loadingMessage.innerHTML =
-                    "Unable to load introduction video.";
+            const playPromise =
+                video.play();
+
+            if (
+                playPromise !== undefined
+            ) {
+
+                playPromise.catch(
+                    function () {
+                    }
+                );
 
             }
-        );
+
+        }
+
+
+        if (
+            document.readyState ===
+            "loading"
+        ) {
+
+            document.addEventListener(
+                "DOMContentLoaded",
+                startVideo
+            );
+
+        } else {
+
+            startVideo();
+
+        }
 
     </script>
 
