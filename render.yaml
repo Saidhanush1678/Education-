@@ -1,7 +1,9 @@
+```yaml
 services:
   - type: web
     name: vijay-educational-services
     runtime: python
+    plan: free
 
     buildCommand: pip install -r requirements.txt
 
@@ -10,3 +12,15 @@ services:
     envVars:
       - key: SECRET_KEY
         generateValue: true
+
+      - key: ADMIN_USERNAME
+        sync: false
+
+      - key: ADMIN_PASSWORD
+        sync: false
+
+    disk:
+      name: vijay-data
+      mountPath: /var/data
+      sizeGB: 1
+```
