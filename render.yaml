@@ -1,4 +1,4 @@
-```yaml
+
 services:
   - type: web
     name: vijay-educational-services
@@ -23,4 +23,4 @@ services:
       name: vijay-data
       mountPath: /var/data
       sizeGB: 1
-```
+
