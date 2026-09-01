@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 
 {% block title %}Student Login | VIJAY Educational Services{% endblock %}
@@ -8,15 +7,16 @@
 <div class="student-login-page">
 
     <!-- =====================================================
-         WELCOME / ONLINE EDUCATION INTRO
-         Appears first, then automatically disappears
+         CINEMATIC EDUCATION INTRO
     ====================================================== -->
 
-    <div class="education-intro" id="educationIntro">
+    <section class="education-intro" id="educationIntro">
 
-        <div class="education-bg"></div>
+        <div class="cinematic-bg"></div>
 
-        <!-- Floating particles -->
+        <div class="light-beam beam-one"></div>
+        <div class="light-beam beam-two"></div>
+
         <div class="particles">
             <span></span>
             <span></span>
@@ -30,121 +30,92 @@
             <span></span>
             <span></span>
             <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
 
-        <!-- Education Icons -->
-        <div class="edu-icon book-icon">📚</div>
-        <div class="edu-icon cap-icon">🎓</div>
-        <div class="edu-icon pencil-icon">✏️</div>
-        <div class="edu-icon bulb-icon">💡</div>
+        <div class="movie-icon book-icon">📚</div>
+        <div class="movie-icon cap-icon">🎓</div>
+        <div class="movie-icon bulb-icon">💡</div>
+        <div class="movie-icon pencil-icon">✏️</div>
 
-        <!-- Connection Lines -->
-        <div class="connection connection-1"></div>
-        <div class="connection connection-2"></div>
-        <div class="connection connection-3"></div>
+        <!-- Cinematic Classroom -->
 
-        <!-- =================================================
-             DIGITAL CLASSROOM
-        ================================================== -->
+        <div class="intro-classroom">
 
-        <div class="digital-classroom">
+            <div class="intro-laptop">
 
-            <div class="laptop">
+                <div class="intro-screen">
 
-                <!-- Laptop Screen -->
-                <div class="laptop-screen">
+                    <div class="intro-screen-top">
+                        <span class="camera-dot"></span>
 
-                    <div class="screen-header">
-
-                        <div class="camera"></div>
-
-                        <div class="screen-title">
+                        <span>
                             VIJAY EDUCATIONAL SERVICES
-                        </div>
+                        </span>
 
-                        <div class="online-dot"></div>
-
+                        <span class="online-dot"></span>
                     </div>
 
-                    <!-- Teacher + Board -->
-                    <div class="teacher-area">
+                    <div class="intro-teacher-area">
 
-                        <div class="teacher">
+                        <div class="intro-teacher">
 
-                            <div class="teacher-head"></div>
+                            <div class="intro-teacher-head"></div>
 
-                            <div class="teacher-body"></div>
+                            <div class="intro-teacher-body"></div>
 
                         </div>
 
-                        <div class="white-board">
+                        <div class="intro-board">
 
-                            <div class="board-title">
+                            <div class="intro-board-title">
                                 ONLINE CLASS
                             </div>
 
-                            <div class="board-line line-1"></div>
-                            <div class="board-line line-2"></div>
-                            <div class="board-line line-3"></div>
+                            <div class="intro-writing w1"></div>
+                            <div class="intro-writing w2"></div>
+                            <div class="intro-writing w3"></div>
 
-                            <div class="math-symbol">
-                                ∑
+                            <div class="intro-formula">
+                                A + B = C
                             </div>
 
                         </div>
 
                     </div>
 
-                    <!-- Students -->
-                    <div class="student-row">
+                    <div class="intro-students">
 
-                        <div class="mini-student">
-                            <div class="mini-head"></div>
-                            <div class="mini-body"></div>
+                        <div>
+                            <i></i>
+                            <b></b>
                         </div>
 
-                        <div class="mini-student">
-                            <div class="mini-head"></div>
-                            <div class="mini-body"></div>
+                        <div>
+                            <i></i>
+                            <b></b>
                         </div>
 
-                        <div class="mini-student">
-                            <div class="mini-head"></div>
-                            <div class="mini-body"></div>
+                        <div>
+                            <i></i>
+                            <b></b>
                         </div>
 
                     </div>
 
-                    <div class="screen-glow"></div>
+                    <div class="screen-light"></div>
 
                 </div>
 
-                <!-- Laptop Base -->
-                <div class="laptop-base">
+                <div class="intro-laptop-base">
 
                     <div class="keyboard">
 
+                        {% for i in range(30) %}
                         <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        {% endfor %}
 
                     </div>
 
@@ -154,25 +125,29 @@
 
             </div>
 
-            <div class="digital-floor"></div>
+            <div class="intro-floor"></div>
 
         </div>
 
-        <!-- Welcome Text -->
-        <div class="education-title">
+        <!-- Movie Title -->
 
-            <div class="title-line"></div>
+        <div class="movie-title">
+
+            <div class="movie-line"></div>
 
             <span>
-                LEARN • CONNECT • GROW
+                VIJAY EDUCATIONAL SERVICES
             </span>
 
-            <div class="title-line"></div>
+            <div class="movie-line"></div>
 
         </div>
 
-        <!-- Loading -->
-        <div class="intro-loading">
+        <div class="movie-subtitle">
+            LEARN • CONNECT • GROW
+        </div>
+
+        <div class="intro-loader">
 
             <span></span>
             <span></span>
@@ -180,26 +155,24 @@
 
         </div>
 
-    </div>
+        <div class="cinematic-vignette"></div>
+
+    </section>
 
 
     <!-- =====================================================
-         MAIN ONLINE CLASSROOM BACKGROUND
+         MAIN CLASSROOM
     ====================================================== -->
 
     <div class="classroom-animation">
 
-        <!-- Floating educational symbols -->
-        <div class="floating-particle particle-1">+</div>
-        <div class="floating-particle particle-2">✦</div>
-        <div class="floating-particle particle-3">●</div>
-        <div class="floating-particle particle-4">+</div>
-        <div class="floating-particle particle-5">✦</div>
+        <div class="floating-particle p1">+</div>
+        <div class="floating-particle p2">✦</div>
+        <div class="floating-particle p3">●</div>
+        <div class="floating-particle p4">+</div>
+        <div class="floating-particle p5">✦</div>
 
-
-        <!-- =================================================
-             TEACHER
-        ================================================== -->
+        <!-- Teacher -->
 
         <div class="teacher-main">
 
@@ -209,10 +182,10 @@
 
                 <div class="teacher-main-face">
 
-                    <div class="teacher-main-eye teacher-main-eye-left"></div>
-                    <div class="teacher-main-eye teacher-main-eye-right"></div>
+                    <span class="teacher-eye left"></span>
+                    <span class="teacher-eye right"></span>
 
-                    <div class="teacher-main-mouth"></div>
+                    <span class="teacher-mouth"></span>
 
                 </div>
 
@@ -220,20 +193,18 @@
 
             <div class="teacher-main-body">
 
-                <div class="teacher-main-shirt"></div>
+                <div class="teacher-shirt"></div>
 
-                <div class="teacher-main-hand"></div>
+                <div class="teacher-hand"></div>
 
             </div>
 
-            <div class="teacher-main-pointer"></div>
+            <div class="teacher-pointer"></div>
 
         </div>
 
 
-        <!-- =================================================
-             DIGITAL BOARD
-        ================================================== -->
+        <!-- Digital Board -->
 
         <div class="class-board">
 
@@ -245,25 +216,25 @@
                     LIVE ONLINE CLASS
                 </span>
 
-                <span class="live-indicator">
+                <strong>
                     LIVE
-                </span>
+                </strong>
 
             </div>
 
             <div class="board-content">
 
-                <div class="board-heading">
+                <h2>
                     WELCOME TO CLASS
-                </div>
+                </h2>
 
-                <div class="board-text">
+                <p>
                     Learn • Practice • Succeed
-                </div>
+                </p>
 
-                <div class="writing-line board-line-one"></div>
-                <div class="writing-line board-line-two"></div>
-                <div class="writing-line board-line-three"></div>
+                <div class="writing-line one"></div>
+                <div class="writing-line two"></div>
+                <div class="writing-line three"></div>
 
                 <div class="formula">
                     A + B = C
@@ -274,72 +245,76 @@
         </div>
 
 
-        <!-- =================================================
-             STUDENTS
-        ================================================== -->
+        <!-- Students -->
 
         <div class="students">
 
-            <!-- Student 1 -->
             <div class="student student-one">
 
                 <div class="student-head">
                     <div class="student-hair"></div>
 
-                    <div class="student-eye student-eye-left"></div>
-                    <div class="student-eye student-eye-right"></div>
+                    <span></span>
+                    <span></span>
                 </div>
 
                 <div class="student-body"></div>
 
                 <div class="student-laptop">
 
-                    <div class="laptop-screen-small"></div>
-                    <div class="laptop-base-small"></div>
+                    <div class="small-screen">
+                        ONLINE
+                    </div>
+
+                    <div class="small-base"></div>
 
                 </div>
 
             </div>
 
 
-            <!-- Student 2 -->
             <div class="student student-two">
 
                 <div class="student-head">
                     <div class="student-hair"></div>
 
-                    <div class="student-eye student-eye-left"></div>
-                    <div class="student-eye student-eye-right"></div>
+                    <span></span>
+                    <span></span>
                 </div>
 
                 <div class="student-body"></div>
 
                 <div class="student-laptop">
 
-                    <div class="laptop-screen-small"></div>
-                    <div class="laptop-base-small"></div>
+                    <div class="small-screen">
+                        ONLINE
+                    </div>
+
+                    <div class="small-base"></div>
 
                 </div>
 
             </div>
 
 
-            <!-- Student 3 -->
             <div class="student student-three">
 
                 <div class="student-head">
                     <div class="student-hair"></div>
 
-                    <div class="student-eye student-eye-left"></div>
-                    <div class="student-eye student-eye-right"></div>
+                    <span></span>
+                    <span></span>
                 </div>
 
                 <div class="student-body"></div>
 
                 <div class="student-laptop">
 
-                    <div class="laptop-screen-small"></div>
-                    <div class="laptop-base-small"></div>
+                    <div class="small-screen">
+                        ONLINE
+                    </div>
+
+                    <div class="small-base"></div>
 
                 </div>
 
@@ -348,11 +323,9 @@
         </div>
 
 
-        <!-- =================================================
-             WIFI
-        ================================================== -->
+        <!-- WIFI -->
 
-        <div class="wifi-signal">
+        <div class="wifi">
 
             <span></span>
             <span></span>
@@ -361,31 +334,28 @@
         </div>
 
 
-        <!-- Floor -->
         <div class="classroom-floor"></div>
 
     </div>
 
 
     <!-- =====================================================
-         STUDENT LOGIN CARD
+         LOGIN CARD
     ====================================================== -->
 
     <div class="student-login-card">
 
-        <div class="card-glow"></div>
+        <div class="card-light"></div>
 
+        <div class="student-access">
 
-        <!-- Header -->
+            <span></span>
+
+            STUDENT ACCESS
+
+        </div>
+
         <div class="student-login-header">
-
-            <div class="student-access">
-
-                <span></span>
-
-                STUDENT ACCESS
-
-            </div>
 
             <h1>
                 Welcome<br>
@@ -399,14 +369,11 @@
         </div>
 
 
-        <!-- =================================================
-             LOGIN FORM
-        ================================================== -->
+        <!-- LOGIN FORM -->
 
         <form method="POST" class="student-login-form">
 
-            <!-- Email -->
-            <div class="student-form-group">
+            <div class="form-group">
 
                 <label for="student-email">
                     Email address
@@ -424,14 +391,13 @@
             </div>
 
 
-            <!-- Password -->
-            <div class="student-form-group">
+            <div class="form-group">
 
                 <label for="student-password">
                     Password
                 </label>
 
-                <div class="student-password-container">
+                <div class="password-box">
 
                     <input
                         type="password"
@@ -444,8 +410,8 @@
 
                     <button
                         type="button"
-                        onclick="toggleStudentPassword()"
                         id="student-password-button"
+                        onclick="toggleStudentPassword()"
                     >
                         SHOW
                     </button>
@@ -455,10 +421,9 @@
             </div>
 
 
-            <!-- Options -->
-            <div class="student-login-options">
+            <div class="login-options">
 
-                <label class="student-remember">
+                <label class="remember">
 
                     <input
                         type="checkbox"
@@ -471,20 +436,16 @@
 
                 </label>
 
-                <a
-                    href="#"
-                    class="student-forgot"
-                >
+                <a href="#" class="forgot">
                     Forgot password?
                 </a>
 
             </div>
 
 
-            <!-- Login Button -->
             <button
                 type="submit"
-                class="student-login-button"
+                class="login-button"
             >
 
                 <span>
@@ -500,8 +461,7 @@
         </form>
 
 
-        <!-- Register -->
-        <div class="student-register">
+        <div class="register">
 
             <span>
                 New student?
@@ -521,7 +481,7 @@
 <style>
 
 /* =========================================================
-   GLOBAL RESET
+   RESET
 ========================================================= */
 
 .student-login-page,
@@ -529,148 +489,186 @@
     box-sizing: border-box;
 }
 
-
-/* =========================================================
-   MAIN PAGE
-========================================================= */
-
 .student-login-page {
-
     position: relative;
-
-    min-height: calc(100vh - 70px);
-
     width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: flex-end;
-
-    padding: 50px 8vw;
-
+    min-height: calc(100vh - 70px);
     overflow: hidden;
 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 40px 7vw;
+
     background:
-
         radial-gradient(
-            circle at 18% 50%,
-            rgba(42,91,180,.24),
-            transparent 34%
+            circle at 20% 50%,
+            rgba(40,100,210,.22),
+            transparent 35%
         ),
-
         radial-gradient(
-            circle at 60% 35%,
-            rgba(245,190,65,.08),
-            transparent 30%
+            circle at 75% 20%,
+            rgba(244,190,65,.08),
+            transparent 25%
         ),
-
         linear-gradient(
             135deg,
-            #02050b,
-            #08111f,
-            #020407
+            #010308,
+            #07101d,
+            #020408
         );
-
 }
 
 
 /* =========================================================
-   WELCOME EDUCATION INTRO
+   CINEMATIC INTRO
 ========================================================= */
 
 .education-intro {
-
     position: fixed;
-
     inset: 0;
 
     width: 100%;
-
     height: 100vh;
 
-    z-index: 99999;
+    z-index: 999999;
 
     overflow: hidden;
 
     background:
-
         radial-gradient(
-            circle at 50% 45%,
-            #172039 0%,
-            #080d19 40%,
-            #020306 80%,
+            circle at 50% 48%,
+            #18233c 0%,
+            #0a1120 35%,
+            #03060d 70%,
             #000 100%
         );
 
     animation:
-        educationIntroExit
-        1.3s
-        ease-in-out
-        4.8s
+        introExit
+        1.5s
+        cubic-bezier(.65,0,.35,1)
+        5.5s
         forwards;
-
 }
 
 
 /* =========================================================
-   INTRO BACKGROUND
+   CINEMATIC BACKGROUND
 ========================================================= */
 
-.education-bg {
-
+.cinematic-bg {
     position: absolute;
-
     inset: 0;
 
     background:
-
         radial-gradient(
-            circle at 50% 55%,
-            rgba(58,124,255,.15),
-            transparent 30%
+            circle at 50% 50%,
+            rgba(70,135,255,.18),
+            transparent 28%
         ),
-
         radial-gradient(
-            circle at 75% 20%,
-            rgba(245,190,65,.08),
+            circle at 20% 30%,
+            rgba(50,110,255,.12),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(240,190,70,.08),
             transparent 25%
         );
-
 }
 
 
 /* =========================================================
-   INTRO PARTICLES
+   CINEMATIC LIGHT BEAMS
+========================================================= */
+
+.light-beam {
+    position: absolute;
+
+    width: 500px;
+    height: 100%;
+
+    top: 0;
+
+    opacity: .12;
+
+    filter: blur(35px);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(80,150,255,.6),
+            transparent
+        );
+
+    transform: rotate(15deg);
+
+    animation:
+        beamMove
+        8s
+        ease-in-out
+        infinite;
+}
+
+.beam-one {
+    left: -20%;
+}
+
+.beam-two {
+    right: -20%;
+    transform: rotate(-15deg);
+    animation-delay: 2s;
+}
+
+@keyframes beamMove {
+
+    0%,
+    100% {
+        opacity: .05;
+        transform: translateX(0) rotate(15deg);
+    }
+
+    50% {
+        opacity: .18;
+        transform: translateX(120px) rotate(15deg);
+    }
+}
+
+
+/* =========================================================
+   PARTICLES
 ========================================================= */
 
 .particles {
-
     position: absolute;
-
     inset: 0;
-
 }
 
 .particles span {
-
     position: absolute;
 
-    width: 4px;
-
-    height: 4px;
+    width: 3px;
+    height: 3px;
 
     border-radius: 50%;
 
-    background: rgba(255,255,255,.7);
+    background: white;
+
+    opacity: .25;
+
+    box-shadow:
+        0 0 8px
+        rgba(255,255,255,.8);
 
     animation:
-        particleFloat
-        4s
+        cinematicParticle
+        5s
         ease-in-out
         infinite;
-
 }
 
 .particles span:nth-child(1) {
@@ -679,120 +677,236 @@
 }
 
 .particles span:nth-child(2) {
-    left: 18%;
-    top: 65%;
+    left: 17%;
+    top: 70%;
     animation-delay: .5s;
 }
 
 .particles span:nth-child(3) {
-    left: 30%;
-    top: 18%;
+    left: 27%;
+    top: 15%;
     animation-delay: 1s;
 }
 
 .particles span:nth-child(4) {
-    left: 43%;
-    top: 75%;
+    left: 39%;
+    top: 78%;
     animation-delay: 1.5s;
 }
 
 .particles span:nth-child(5) {
-    left: 58%;
-    top: 15%;
+    left: 50%;
+    top: 20%;
     animation-delay: 2s;
 }
 
 .particles span:nth-child(6) {
-    left: 72%;
-    top: 68%;
+    left: 62%;
+    top: 72%;
     animation-delay: 2.5s;
 }
 
 .particles span:nth-child(7) {
-    left: 83%;
-    top: 25%;
-    animation-delay: 1.2s;
-}
-
-.particles span:nth-child(8) {
-    left: 92%;
-    top: 58%;
-    animation-delay: 2.8s;
-}
-
-.particles span:nth-child(9) {
-    left: 12%;
-    top: 82%;
-    animation-delay: .8s;
-}
-
-.particles span:nth-child(10) {
-    left: 66%;
-    top: 82%;
-    animation-delay: 1.8s;
-}
-
-.particles span:nth-child(11) {
-    left: 38%;
-    top: 35%;
-    animation-delay: 2.2s;
-}
-
-.particles span:nth-child(12) {
-    left: 87%;
-    top: 78%;
+    left: 73%;
+    top: 18%;
     animation-delay: 3s;
 }
 
-@keyframes particleFloat {
+.particles span:nth-child(8) {
+    left: 85%;
+    top: 60%;
+    animation-delay: 1.2s;
+}
+
+.particles span:nth-child(9) {
+    left: 91%;
+    top: 30%;
+    animation-delay: 2.4s;
+}
+
+.particles span:nth-child(10) {
+    left: 12%;
+    top: 48%;
+    animation-delay: 3.1s;
+}
+
+.particles span:nth-child(11) {
+    left: 34%;
+    top: 40%;
+    animation-delay: .8s;
+}
+
+.particles span:nth-child(12) {
+    left: 70%;
+    top: 45%;
+    animation-delay: 1.8s;
+}
+
+.particles span:nth-child(13) {
+    left: 57%;
+    top: 85%;
+    animation-delay: 2.8s;
+}
+
+.particles span:nth-child(14) {
+    left: 25%;
+    top: 85%;
+    animation-delay: 3.5s;
+}
+
+.particles span:nth-child(15) {
+    left: 95%;
+    top: 80%;
+    animation-delay: 1.5s;
+}
+
+@keyframes cinematicParticle {
 
     0%,
     100% {
-
-        opacity: .2;
-
         transform:
-            translateY(0);
+            translateY(0)
+            scale(.7);
 
+        opacity: .15;
     }
 
     50% {
-
-        opacity: 1;
-
         transform:
-            translateY(-18px);
+            translateY(-25px)
+            scale(1.5);
 
+        opacity: .9;
     }
-
 }
 
 
 /* =========================================================
-   INTRO DIGITAL CLASSROOM
+   FLOATING ICONS
 ========================================================= */
 
-.digital-classroom {
-
+.movie-icon {
     position: absolute;
 
-    left: 15%;
+    width: 58px;
+    height: 58px;
 
-    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    transform: translateY(-50%);
+    border:
+        1px solid
+        rgba(255,255,255,.13);
 
-    width: 540px;
+    border-radius: 17px;
 
-    height: 430px;
+    background:
+        rgba(255,255,255,.05);
+
+    backdrop-filter: blur(12px);
+
+    font-size: 25px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.4);
 
     animation:
-        classroomAppear
-        1.5s
-        cubic-bezier(.16,1,.3,1)
-        .4s
-        both;
+        iconFloat
+        4s
+        ease-in-out
+        infinite;
 
+    z-index: 5;
+}
+
+.book-icon {
+    left: 8%;
+    top: 25%;
+}
+
+.cap-icon {
+    left: 42%;
+    top: 10%;
+    animation-delay: .8s;
+}
+
+.bulb-icon {
+    right: 8%;
+    bottom: 20%;
+    animation-delay: 1.5s;
+}
+
+.pencil-icon {
+    right: 16%;
+    top: 25%;
+    animation-delay: 2s;
+}
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateY(-18px)
+            rotate(4deg);
+    }
+}
+
+
+/* =========================================================
+   INTRO CLASSROOM
+========================================================= */
+
+.intro-classroom {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 600px;
+    height: 460px;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.8);
+
+    animation:
+        classroomIntro
+        1.6s
+        cubic-bezier(.16,1,.3,1)
+        .3s
+        both;
+}
+
+@keyframes classroomIntro {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.55);
+
+        filter: blur(15px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.8);
+
+        filter: blur(0);
+    }
 }
 
 
@@ -800,207 +914,163 @@
    INTRO LAPTOP
 ========================================================= */
 
-.education-intro .laptop {
-
+.intro-laptop {
     position: absolute;
 
     left: 50%;
-
     top: 50%;
+
+    width: 470px;
+    height: 340px;
 
     transform:
         translate(-50%,-50%);
-
-    width: 430px;
-
-    height: 310px;
-
 }
 
 
-.education-intro .laptop-screen {
+/* SCREEN */
 
+.intro-screen {
     position: absolute;
 
-    left: 0;
-
+    left: 20px;
     top: 0;
 
     width: 430px;
+    height: 270px;
 
-    height: 260px;
-
-    border: 8px solid #151b27;
-
-    border-bottom: 12px solid #151b27;
+    border:
+        8px solid
+        #151c29;
 
     border-radius:
-        15px 15px 5px 5px;
+        16px 16px 6px 6px;
 
     overflow: hidden;
 
     background:
         linear-gradient(
             135deg,
-            #15294b,
-            #0b1426
+            #142b50,
+            #091322
         );
 
     box-shadow:
+        0 0 60px
+        rgba(60,130,255,.25),
 
-        0 0 40px
-        rgba(58,125,255,.22),
-
-        0 25px 60px
-        rgba(0,0,0,.6);
-
+        0 30px 80px
+        rgba(0,0,0,.7);
 }
 
 
-/* =========================================================
-   INTRO SCREEN HEADER
-========================================================= */
+/* SCREEN HEADER */
 
-.screen-header {
-
-    position: relative;
-
+.intro-screen-top {
     height: 32px;
 
     display: flex;
-
     align-items: center;
 
     padding: 0 12px;
 
-    background: #101827;
+    gap: 9px;
 
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.08);
+    background:
+        #0d1523;
 
+    color:
+        rgba(255,255,255,.6);
+
+    font-size: 7px;
+
+    letter-spacing: 1.2px;
 }
 
-.camera {
-
+.camera-dot {
     width: 5px;
-
     height: 5px;
 
     border-radius: 50%;
 
     background: #050505;
-
-    margin-right: 10px;
-
-}
-
-.screen-title {
-
-    color:
-        rgba(255,255,255,.65);
-
-    font-size: 7px;
-
-    letter-spacing: 1.3px;
-
 }
 
 .online-dot {
-
     margin-left: auto;
 
     width: 6px;
-
     height: 6px;
 
     border-radius: 50%;
 
-    background: #54e58c;
+    background: #55e68d;
 
     box-shadow:
-        0 0 8px
-        rgba(84,229,140,.8);
-
+        0 0 10px
+        rgba(85,230,141,.8);
 }
 
 
 /* =========================================================
-   INTRO TEACHER AREA
+   INTRO TEACHER
 ========================================================= */
 
-.teacher-area {
-
+.intro-teacher-area {
     position: relative;
 
-    height: 155px;
-
+    height: 160px;
 }
 
-.education-intro .teacher {
-
+.intro-teacher {
     position: absolute;
 
-    left: 25px;
-
+    left: 35px;
     bottom: 0;
 
     width: 75px;
-
-    height: 120px;
-
+    height: 125px;
 }
 
-.education-intro .teacher-head {
-
+.intro-teacher-head {
     position: absolute;
 
-    left: 21px;
-
-    top: 5px;
+    left: 20px;
+    top: 3px;
 
     width: 38px;
-
-    height: 38px;
+    height: 40px;
 
     border-radius: 50%;
 
-    background: #d9a579;
-
+    background: #d39a72;
 }
 
-.education-intro .teacher-head::before {
-
+.intro-teacher-head::before {
     content: "";
 
     position: absolute;
 
     left: 0;
-
     top: -3px;
 
     width: 38px;
-
     height: 18px;
 
     border-radius:
         50% 50% 30% 30%;
 
-    background: #1d2029;
-
+    background: #17191e;
 }
 
-.education-intro .teacher-body {
-
+.intro-teacher-body {
     position: absolute;
 
-    left: 12px;
-
+    left: 10px;
     bottom: 0;
 
-    width: 54px;
-
-    height: 76px;
+    width: 55px;
+    height: 80px;
 
     border-radius:
         25px 25px 5px 5px;
@@ -1008,46 +1078,42 @@
     background:
         linear-gradient(
             90deg,
-            #315d9c,
-            #4c82d0
+            #2e5d9b,
+            #5087d6
         );
-
 }
 
 
 /* =========================================================
-   WHITE BOARD
+   INTRO BOARD
 ========================================================= */
 
-.white-board {
-
+.intro-board {
     position: absolute;
 
-    right: 28px;
-
+    right: 25px;
     top: 15px;
 
-    width: 265px;
-
-    height: 125px;
+    width: 275px;
+    height: 130px;
 
     padding: 15px;
 
-    border: 3px solid #4d5562;
+    border:
+        3px solid
+        #4c5666;
 
-    border-radius: 5px;
+    border-radius: 6px;
 
-    background: #e9edf2;
+    background: #edf0f4;
 
     box-shadow:
-        0 5px 15px
-        rgba(0,0,0,.3);
-
+        0 8px 20px
+        rgba(0,0,0,.4);
 }
 
-.board-title {
-
-    color: #18233a;
+.intro-board-title {
+    color: #1a263c;
 
     font-size: 10px;
 
@@ -1055,48 +1121,65 @@
 
     letter-spacing: 1px;
 
-    margin-bottom: 12px;
-
+    margin-bottom: 13px;
 }
 
-.board-line {
-
-    width: 130px;
-
+.intro-writing {
+    width: 145px;
     height: 4px;
+
+    border-radius: 4px;
+
+    background: #9da8b7;
 
     margin-bottom: 9px;
 
-    border-radius: 3px;
+    transform-origin: left;
 
-    background: #9ba7b7;
-
+    animation:
+        introWriting
+        2.5s
+        ease-in-out
+        infinite;
 }
 
-.line-2 {
-    width: 100px;
+.intro-writing.w2 {
+    width: 105px;
+    animation-delay: .4s;
 }
 
-.line-3 {
-    width: 145px;
+.intro-writing.w3 {
+    width: 135px;
+    animation-delay: .8s;
 }
 
-.math-symbol {
+@keyframes introWriting {
 
+    0%,
+    100% {
+        transform: scaleX(.5);
+        opacity: .3;
+    }
+
+    50% {
+        transform: scaleX(1);
+        opacity: .9;
+    }
+}
+
+.intro-formula {
     position: absolute;
 
     right: 25px;
+    top: 42px;
 
-    top: 40px;
-
-    color: #d49d29;
-
-    font-size: 48px;
+    color: #d19c2b;
 
     font-family:
         Georgia,
         serif;
 
+    font-size: 40px;
 }
 
 
@@ -1104,124 +1187,126 @@
    INTRO STUDENTS
 ========================================================= */
 
-.student-row {
-
+.intro-students {
     position: absolute;
 
     left: 20px;
-
     right: 20px;
 
-    bottom: 12px;
+    bottom: 18px;
 
     height: 55px;
 
     display: flex;
 
-    gap: 8px;
-
+    gap: 10px;
 }
 
-.mini-student {
+.intro-students div {
+    flex: 1;
 
     position: relative;
 
-    flex: 1;
-
-    border-radius: 5px;
+    border-radius: 6px;
 
     background:
-        rgba(255,255,255,.06);
-
+        rgba(255,255,255,.05);
 }
 
-.mini-head {
-
+.intro-students i {
     position: absolute;
 
     left: 50%;
+    top: 6px;
 
-    top: 7px;
+    transform:
+        translateX(-50%);
 
-    transform: translateX(-50%);
-
-    width: 18px;
-
-    height: 18px;
+    width: 19px;
+    height: 19px;
 
     border-radius: 50%;
 
     background: #d5a174;
-
 }
 
-.mini-body {
-
+.intro-students b {
     position: absolute;
 
     left: 50%;
-
     bottom: 0;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
-    width: 28px;
-
-    height: 25px;
+    width: 30px;
+    height: 27px;
 
     border-radius:
         10px 10px 3px 3px;
 
-    background: #526c91;
-
+    background: #526e96;
 }
 
 
 /* =========================================================
-   SCREEN GLOW
+   SCREEN LIGHT
 ========================================================= */
 
-.screen-glow {
-
+.screen-light {
     position: absolute;
-
     inset: 0;
 
     pointer-events: none;
 
     background:
         radial-gradient(
-            circle at 50% 45%,
-            rgba(87,151,255,.12),
-            transparent 55%
+            circle at 50% 50%,
+            rgba(80,150,255,.16),
+            transparent 60%
         );
 
+    animation:
+        screenPulse
+        3s
+        ease-in-out
+        infinite;
+}
+
+@keyframes screenPulse {
+
+    0%,
+    100% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 
 /* =========================================================
-   INTRO LAPTOP BASE
+   LAPTOP BASE
 ========================================================= */
 
-.laptop-base {
-
+.intro-laptop-base {
     position: absolute;
 
     left: 50%;
+    top: 265px;
 
-    top: 255px;
-
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     width: 480px;
-
-    height: 45px;
+    height: 48px;
 
     background:
         linear-gradient(
             180deg,
-            #555e6c,
-            #272e39
+            #596371,
+            #252c37
         );
 
     clip-path:
@@ -1234,55 +1319,47 @@
 
     border-radius:
         0 0 15px 15px;
-
 }
 
 .keyboard {
-
     position: absolute;
 
     left: 50%;
-
     top: 7px;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
-    width: 270px;
-
-    height: 20px;
+    width: 285px;
+    height: 22px;
 
     display: grid;
 
     grid-template-columns:
-        repeat(10, 1fr);
+        repeat(10,1fr);
 
     gap: 3px;
-
 }
 
 .keyboard span {
-
     height: 5px;
 
     border-radius: 1px;
 
     background:
-        rgba(10,14,20,.8);
-
+        rgba(8,12,18,.85);
 }
 
 .trackpad {
-
     position: absolute;
 
     left: 50%;
-
     bottom: 5px;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
-    width: 70px;
-
+    width: 75px;
     height: 10px;
 
     border:
@@ -1290,398 +1367,219 @@
         rgba(255,255,255,.12);
 
     border-radius: 3px;
-
 }
 
 
 /* =========================================================
-   DIGITAL FLOOR
+   FLOOR
 ========================================================= */
 
-.digital-floor {
-
+.intro-floor {
     position: absolute;
 
     left: 50%;
-
     bottom: 0;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
-    width: 540px;
-
-    height: 50px;
+    width: 580px;
+    height: 55px;
 
     border-radius: 50%;
 
     background:
-        rgba(55,119,255,.08);
+        rgba(60,125,255,.08);
 
     box-shadow:
-        0 0 50px
-        rgba(55,119,255,.15);
-
+        0 0 70px
+        rgba(60,125,255,.15);
 }
 
 
 /* =========================================================
-   INTRO FLOATING ICONS
+   MOVIE TITLE
 ========================================================= */
 
-.edu-icon {
-
-    position: absolute;
-
-    width: 55px;
-
-    height: 55px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border:
-        1px solid
-        rgba(255,255,255,.12);
-
-    border-radius: 15px;
-
-    background:
-        rgba(255,255,255,.05);
-
-    backdrop-filter: blur(10px);
-
-    font-size: 25px;
-
-    box-shadow:
-        0 10px 30px
-        rgba(0,0,0,.3);
-
-    z-index: 5;
-
-}
-
-.book-icon {
-
-    left: 8%;
-
-    top: 25%;
-
-    animation:
-        floatingIcon
-        4s
-        ease-in-out
-        infinite;
-
-}
-
-.cap-icon {
-
-    left: 38%;
-
-    top: 12%;
-
-    animation:
-        floatingIcon
-        4.5s
-        ease-in-out
-        .5s
-        infinite;
-
-}
-
-.pencil-icon {
-
-    right: 17%;
-
-    top: 25%;
-
-    animation:
-        floatingIcon
-        4s
-        ease-in-out
-        1s
-        infinite;
-
-}
-
-.bulb-icon {
-
-    right: 8%;
-
-    bottom: 22%;
-
-    animation:
-        floatingIcon
-        4.5s
-        ease-in-out
-        1.5s
-        infinite;
-
-}
-
-@keyframes floatingIcon {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0)
-            rotate(-3deg);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-15px)
-            rotate(3deg);
-
-    }
-
-}
-
-
-/* =========================================================
-   CONNECTION LINES
-========================================================= */
-
-.connection {
-
-    position: absolute;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(91,153,255,.5),
-            transparent
-        );
-
-    transform-origin: left center;
-
-    opacity: .5;
-
-}
-
-.connection-1 {
-
-    width: 200px;
-
-    left: 10%;
-
-    top: 40%;
-
-    transform: rotate(12deg);
-
-}
-
-.connection-2 {
-
-    width: 180px;
-
-    left: 48%;
-
-    top: 20%;
-
-    transform: rotate(-25deg);
-
-}
-
-.connection-3 {
-
-    width: 190px;
-
-    left: 58%;
-
-    top: 70%;
-
-    transform: rotate(18deg);
-
-}
-
-
-/* =========================================================
-   INTRO TITLE
-========================================================= */
-
-.education-title {
-
+.movie-title {
     position: absolute;
 
     left: 50%;
+    bottom: 13%;
 
-    bottom: 9%;
-
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     display: flex;
-
     align-items: center;
 
-    gap: 15px;
+    gap: 18px;
 
     color:
-        rgba(255,255,255,.75);
+        rgba(255,255,255,.9);
 
-    font-size: 11px;
+    font-size: 12px;
 
     font-weight: 600;
+
+    letter-spacing: 6px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    animation:
+        movieTitle
+        1.5s
+        ease
+        2s
+        forwards;
+}
+
+.movie-line {
+    width: 55px;
+    height: 1px;
+
+    background:
+        rgba(239,198,88,.7);
+}
+
+@keyframes movieTitle {
+
+    0% {
+        opacity: 0;
+        letter-spacing: 15px;
+        transform:
+            translateX(-50%)
+            translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        letter-spacing: 6px;
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.movie-subtitle {
+    position: absolute;
+
+    left: 50%;
+    bottom: 8%;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        rgba(255,255,255,.42);
+
+    font-size: 8px;
 
     letter-spacing: 5px;
 
     opacity: 0;
 
     animation:
-        titleAppear
-        1.4s
+        subtitleAppear
+        1.2s
         ease
-        2.1s
+        2.5s
         forwards;
-
-    z-index: 20;
-
 }
 
-.title-line {
+@keyframes subtitleAppear {
 
-    width: 45px;
+    from {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            translateY(10px);
+    }
 
-    height: 1px;
-
-    background:
-        rgba(245,200,91,.55);
-
+    to {
+        opacity: 1;
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
 }
 
 
 /* =========================================================
-   INTRO LOADING
+   LOADER
 ========================================================= */
 
-.intro-loading {
-
+.intro-loader {
     position: absolute;
 
     left: 50%;
+    bottom: 4%;
 
-    bottom: 5%;
-
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     display: flex;
-
-    gap: 5px;
-
+    gap: 6px;
 }
 
-.intro-loading span {
-
+.intro-loader span {
     width: 5px;
-
     height: 5px;
 
     border-radius: 50%;
 
-    background: #eac057;
+    background: #edc25d;
 
     animation:
-        loadingDot
+        loader
         1s
         ease-in-out
         infinite;
-
 }
 
-.intro-loading span:nth-child(2) {
+.intro-loader span:nth-child(2) {
     animation-delay: .15s;
 }
 
-.intro-loading span:nth-child(3) {
+.intro-loader span:nth-child(3) {
     animation-delay: .3s;
 }
 
-@keyframes loadingDot {
+@keyframes loader {
 
     0%,
     100% {
-
+        opacity: .25;
         transform: translateY(0);
-
-        opacity: .35;
-
     }
 
     50% {
-
-        transform: translateY(-5px);
-
         opacity: 1;
-
+        transform: translateY(-6px);
     }
-
 }
 
 
 /* =========================================================
-   INTRO CLASSROOM APPEAR
+   VIGNETTE
 ========================================================= */
 
-@keyframes classroomAppear {
+.cinematic-vignette {
+    position: absolute;
+    inset: 0;
 
-    0% {
+    pointer-events: none;
 
-        opacity: 0;
-
-        transform:
-            translateY(-50%)
-            scale(.75);
-
-        filter: blur(10px);
-
-    }
-
-    100% {
-
-        opacity: 1;
-
-        transform:
-            translateY(-50%)
-            scale(1);
-
-        filter: blur(0);
-
-    }
-
-}
-
-
-/* =========================================================
-   TITLE APPEAR
-========================================================= */
-
-@keyframes titleAppear {
-
-    0% {
-
-        opacity: 0;
-
-        letter-spacing: 12px;
-
-    }
-
-    100% {
-
-        opacity: 1;
-
-        letter-spacing: 5px;
-
-    }
-
+    box-shadow:
+        inset 0 0 180px
+        rgba(0,0,0,.9);
 }
 
 
@@ -1689,86 +1587,69 @@
    INTRO EXIT
 ========================================================= */
 
-@keyframes educationIntroExit {
+@keyframes introExit {
 
     0% {
-
         opacity: 1;
-
         visibility: visible;
-
     }
 
     70% {
-
         opacity: 1;
+    }
 
+    88% {
+        opacity: .5;
     }
 
     100% {
-
         opacity: 0;
-
         visibility: hidden;
-
         pointer-events: none;
-
     }
-
 }
 
 
 /* =========================================================
-   MAIN CLASSROOM ANIMATION
+   MAIN CLASSROOM
 ========================================================= */
 
 .classroom-animation {
-
     position: absolute;
 
-    left: 4%;
-
+    left: 3%;
     top: 50%;
 
     width: 720px;
-
     height: 600px;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     z-index: 2;
 
     animation:
         classroomEnter
-        1.5s
+        1.6s
         cubic-bezier(.16,1,.3,1)
-        5.2s
+        5.4s
         both;
-
 }
-
-
-/* =========================================================
-   CLASSROOM ENTER
-========================================================= */
 
 @keyframes classroomEnter {
 
     0% {
-
         opacity: 0;
 
         transform:
             translateY(-50%)
-            translateX(-100px)
-            scale(.85);
+            translateX(-120px)
+            scale(.8);
 
-        filter: blur(10px);
-
+        filter: blur(12px);
     }
 
     100% {
-
         opacity: 1;
 
         transform:
@@ -1777,26 +1658,21 @@
             scale(1);
 
         filter: blur(0);
-
     }
-
 }
 
 
 /* =========================================================
-   MAIN DIGITAL BOARD
+   MAIN BOARD
 ========================================================= */
 
 .class-board {
-
     position: absolute;
 
     left: 150px;
-
     top: 55px;
 
     width: 430px;
-
     height: 265px;
 
     border-radius: 14px;
@@ -1804,60 +1680,50 @@
     background:
         linear-gradient(
             145deg,
-            #162944,
-            #081321
+            #162a46,
+            #07111f
         );
 
-    border: 5px solid #26354a;
-
-    box-shadow:
-
-        0 25px 60px
-        rgba(0,0,0,.55),
-
-        0 0 50px
-        rgba(57,124,255,.13),
-
-        inset 0 0 30px
-        rgba(75,145,255,.06);
+    border:
+        5px solid
+        #26354a;
 
     overflow: hidden;
 
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.6),
+
+        0 0 50px
+        rgba(57,124,255,.14),
+
+        inset 0 0 30px
+        rgba(75,145,255,.06);
 }
 
-
-/* =========================================================
-   BOARD TOP
-========================================================= */
-
 .board-top {
-
     height: 35px;
 
     display: flex;
-
     align-items: center;
-
-    padding: 0 12px;
 
     gap: 8px;
 
+    padding: 0 12px;
+
     background:
-        rgba(0,0,0,.38);
+        rgba(0,0,0,.4);
 
     color:
         rgba(255,255,255,.65);
 
     font-size: 8px;
 
-    letter-spacing: 1.4px;
-
+    letter-spacing: 1.3px;
 }
 
 .board-dot {
-
     width: 7px;
-
     height: 7px;
 
     border-radius: 50%;
@@ -1865,12 +1731,11 @@
     background: #55e78d;
 
     box-shadow:
-        0 0 10px #55e78d;
-
+        0 0 10px
+        #55e78d;
 }
 
-.live-indicator {
-
+.board-top strong {
     margin-left: auto;
 
     padding: 4px 7px;
@@ -1878,7 +1743,7 @@
     border-radius: 4px;
 
     background:
-        rgba(235,65,65,.75);
+        rgba(230,65,65,.8);
 
     color: white;
 
@@ -1888,7 +1753,6 @@
         liveBlink
         1.2s
         infinite;
-
 }
 
 @keyframes liveBlink {
@@ -1896,7 +1760,6 @@
     50% {
         opacity: .35;
     }
-
 }
 
 
@@ -1905,74 +1768,59 @@
 ========================================================= */
 
 .board-content {
-
     position: relative;
 
     height: calc(100% - 35px);
 
     padding: 35px;
-
 }
 
-.board-heading {
+.board-content h2 {
+    margin: 0;
 
     color: #f4d477;
 
     font-family:
         Georgia,
-        "Times New Roman",
         serif;
 
     font-size: 25px;
 
-    letter-spacing: 1px;
+    font-weight: 500;
 
     animation:
         boardGlow
         2s
         ease-in-out
         infinite alternate;
-
 }
 
 @keyframes boardGlow {
 
     from {
-
         text-shadow:
-            0 0 4px
+            0 0 3px
             rgba(244,212,119,.1);
-
     }
 
     to {
-
         text-shadow:
             0 0 18px
             rgba(244,212,119,.4);
-
     }
-
 }
 
-.board-text {
-
-    margin-top: 10px;
+.board-content p {
+    margin:
+        10px 0 0;
 
     color:
         rgba(255,255,255,.5);
 
     font-size: 11px;
-
 }
 
-
-/* =========================================================
-   BOARD WRITING
-========================================================= */
-
 .writing-line {
-
     height: 3px;
 
     margin-top: 20px;
@@ -1985,67 +1833,44 @@
     transform-origin: left;
 
     animation:
-        writingAnimation
+        writing
         3s
         ease-in-out
         infinite;
-
 }
 
-.board-line-one {
+.writing-line.one {
     width: 180px;
 }
 
-.board-line-two {
-
+.writing-line.two {
     width: 130px;
-
     animation-delay: .4s;
-
 }
 
-.board-line-three {
-
+.writing-line.three {
     width: 155px;
-
     animation-delay: .8s;
-
 }
 
-@keyframes writingAnimation {
+@keyframes writing {
 
     0%,
     100% {
-
-        transform:
-            scaleX(.55);
-
+        transform: scaleX(.55);
         opacity: .25;
-
     }
 
     50% {
-
-        transform:
-            scaleX(1);
-
+        transform: scaleX(1);
         opacity: .85;
-
     }
-
 }
 
-
-/* =========================================================
-   FORMULA
-========================================================= */
-
 .formula {
-
     position: absolute;
 
     right: 35px;
-
     bottom: 30px;
 
     color: #77b5ff;
@@ -2057,14 +1882,13 @@
     font-size: 35px;
 
     animation:
-        formulaAnimation
+        formula
         3s
         ease-in-out
         infinite;
-
 }
 
-@keyframes formulaAnimation {
+@keyframes formula {
 
     0%,
     100% {
@@ -2074,24 +1898,20 @@
     50% {
         transform: translateY(-7px);
     }
-
 }
 
 
 /* =========================================================
-   MAIN TEACHER
+   TEACHER
 ========================================================= */
 
 .teacher-main {
-
     position: absolute;
 
     left: 18px;
-
     bottom: 95px;
 
     width: 135px;
-
     height: 330px;
 
     z-index: 5;
@@ -2101,7 +1921,6 @@
         4s
         ease-in-out
         infinite;
-
 }
 
 @keyframes teacherFloat {
@@ -2114,145 +1933,109 @@
     50% {
         transform: translateY(-6px);
     }
-
 }
 
-
-/* =========================================================
-   TEACHER HEAD
-========================================================= */
-
 .teacher-main-head {
-
     position: absolute;
 
     left: 35px;
-
     top: 0;
 
     width: 72px;
-
     height: 82px;
 
     border-radius: 48%;
 
     background: #c98f68;
-
-    box-shadow:
-        inset -8px -5px 12px
-        rgba(80,35,20,.2);
-
 }
 
 .teacher-main-hair {
-
     position: absolute;
 
     left: -2px;
-
     top: -8px;
 
     width: 76px;
-
     height: 40px;
 
     border-radius:
         50% 50% 20% 20%;
 
     background: #151515;
-
 }
 
 .teacher-main-face {
-
     position: absolute;
 
     inset: 28px 0 0;
-
 }
 
-.teacher-main-eye {
-
+.teacher-eye {
     position: absolute;
 
     top: 12px;
 
     width: 6px;
-
     height: 6px;
 
     border-radius: 50%;
 
     background: #171717;
-
 }
 
-.teacher-main-eye-left {
+.teacher-eye.left {
     left: 19px;
 }
 
-.teacher-main-eye-right {
+.teacher-eye.right {
     right: 19px;
 }
 
-.teacher-main-mouth {
-
+.teacher-mouth {
     position: absolute;
 
     left: 50%;
-
     bottom: 6px;
 
     width: 18px;
-
     height: 7px;
 
     transform:
         translateX(-50%);
 
     border-bottom:
-        2px solid #713d34;
+        2px solid
+        #713d34;
 
     border-radius: 50%;
-
 }
 
 
-/* =========================================================
-   TEACHER BODY
-========================================================= */
+/* BODY */
 
 .teacher-main-body {
-
     position: absolute;
 
     left: 10px;
-
     bottom: 0;
 
     width: 120px;
-
     height: 245px;
-
 }
 
-.teacher-main-shirt {
-
+.teacher-shirt {
     position: absolute;
 
     left: 0;
-
     bottom: 0;
 
     width: 120px;
-
     height: 230px;
 
     border-radius:
         48px 48px 15px 15px;
 
     background:
-
         linear-gradient(
             90deg,
             #1e467a,
@@ -2263,24 +2046,15 @@
     box-shadow:
         0 20px 30px
         rgba(0,0,0,.3);
-
 }
 
-
-/* =========================================================
-   TEACHER HAND
-========================================================= */
-
-.teacher-main-hand {
-
+.teacher-hand {
     position: absolute;
 
     right: -22px;
-
     top: 45px;
 
     width: 27px;
-
     height: 90px;
 
     border-radius: 15px;
@@ -2294,14 +2068,13 @@
         top center;
 
     animation:
-        teacherHandAnimation
+        handMove
         3s
         ease-in-out
         infinite;
-
 }
 
-@keyframes teacherHandAnimation {
+@keyframes handMove {
 
     0%,
     100% {
@@ -2311,72 +2084,51 @@
     50% {
         transform: rotate(-55deg);
     }
-
 }
 
-
-/* =========================================================
-   POINTER
-========================================================= */
-
-.teacher-main-pointer {
-
+.teacher-pointer {
     position: absolute;
 
     right: -85px;
-
     top: 120px;
 
     width: 105px;
-
     height: 2px;
 
     background: #e8c45d;
 
     transform: rotate(-10deg);
 
-    transform-origin: left;
-
     box-shadow:
         0 0 10px
         rgba(232,196,93,.5);
-
 }
 
 
 /* =========================================================
-   MAIN STUDENTS
+   STUDENTS
 ========================================================= */
 
 .students {
-
     position: absolute;
 
     right: 0;
-
     bottom: 70px;
 
     width: 380px;
-
     height: 220px;
 
     display: flex;
-
     align-items: flex-end;
-
-    justify-content:
-        space-between;
+    justify-content: space-between;
 
     z-index: 6;
-
 }
 
 .student {
-
     position: relative;
 
     width: 105px;
-
     height: 190px;
 
     animation:
@@ -2384,7 +2136,6 @@
         3.5s
         ease-in-out
         infinite;
-
 }
 
 .student-two {
@@ -2405,169 +2156,116 @@
     50% {
         transform: translateY(-8px);
     }
-
 }
 
-
-/* =========================================================
-   STUDENT HEAD
-========================================================= */
-
 .student-head {
-
     position: absolute;
 
     left: 28px;
-
     top: 0;
 
     width: 52px;
-
     height: 58px;
 
     border-radius: 50%;
 
     background: #c88d68;
-
 }
 
 .student-hair {
-
     position: absolute;
 
     left: 0;
-
     top: -4px;
 
     width: 52px;
-
     height: 25px;
 
     border-radius:
         50% 50% 20% 20%;
 
     background: #202020;
-
 }
 
-.student-eye {
-
+.student-head span {
     position: absolute;
 
     top: 25px;
 
     width: 5px;
-
     height: 5px;
 
     border-radius: 50%;
 
     background: #151515;
-
 }
 
-.student-eye-left {
+.student-head span:first-of-type {
     left: 13px;
 }
 
-.student-eye-right {
+.student-head span:last-of-type {
     right: 13px;
 }
 
-
-/* =========================================================
-   STUDENT BODY
-========================================================= */
-
 .student-body {
-
     position: absolute;
 
     left: 10px;
-
     bottom: 0;
 
     width: 85px;
-
     height: 140px;
 
     border-radius:
         35px 35px 10px 10px;
 
     background:
-
         linear-gradient(
             90deg,
             #673e83,
             #8555a8,
             #59336f
         );
-
 }
 
-
-/* =========================================================
-   STUDENT LAPTOP
-========================================================= */
-
 .student-laptop {
-
     position: absolute;
 
     left: 2px;
-
     bottom: 27px;
 
     width: 100px;
-
     height: 60px;
 
     z-index: 5;
-
 }
 
-.laptop-screen-small {
-
+.small-screen {
     position: absolute;
 
     left: 12px;
-
     top: 0;
 
     width: 76px;
-
     height: 48px;
 
-    border: 4px solid #242d3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        4px solid
+        #242d3a;
 
     border-radius: 5px;
 
     background:
-
         linear-gradient(
             135deg,
             #1d4d85,
             #13243b
         );
-
-    box-shadow:
-        0 0 15px
-        rgba(56,135,255,.25);
-
-}
-
-.laptop-screen-small::after {
-
-    content: "ONLINE";
-
-    position: absolute;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform:
-        translate(-50%,-50%);
 
     color:
         rgba(255,255,255,.55);
@@ -2575,26 +2273,21 @@
     font-size: 6px;
 
     letter-spacing: 1px;
-
 }
 
-.laptop-base-small {
-
+.small-base {
     position: absolute;
 
     left: 0;
-
     bottom: 2px;
 
     width: 100px;
-
     height: 9px;
 
     border-radius:
         2px 2px 8px 8px;
 
     background: #424c5a;
-
 }
 
 
@@ -2602,86 +2295,65 @@
    WIFI
 ========================================================= */
 
-.wifi-signal {
-
+.wifi {
     position: absolute;
 
     right: 45px;
-
     top: 35px;
 
     width: 50px;
-
     height: 50px;
-
 }
 
-.wifi-signal span {
-
+.wifi span {
     position: absolute;
 
     left: 50%;
-
     top: 50%;
 
     transform:
         translate(-50%,-50%);
 
     border:
-        2px solid #5da2ff;
+        2px solid
+        #5da2ff;
 
     border-bottom: 0;
-
     border-left: 0;
 
     border-radius: 50%;
 
     animation:
-        wifiPulse
+        wifi
         2s
         ease-out
         infinite;
-
 }
 
-.wifi-signal span:nth-child(1) {
-
+.wifi span:nth-child(1) {
     width: 18px;
-
     height: 18px;
-
 }
 
-.wifi-signal span:nth-child(2) {
-
+.wifi span:nth-child(2) {
     width: 32px;
-
     height: 32px;
-
     animation-delay: .4s;
-
 }
 
-.wifi-signal span:nth-child(3) {
-
+.wifi span:nth-child(3) {
     width: 46px;
-
     height: 46px;
-
     animation-delay: .8s;
-
 }
 
-@keyframes wifiPulse {
+@keyframes wifi {
 
     0% {
-
         opacity: 0;
-
         transform:
             translate(-50%,-50%)
             scale(.7);
-
     }
 
     50% {
@@ -2689,35 +2361,28 @@
     }
 
     100% {
-
         opacity: 0;
-
         transform:
             translate(-50%,-50%)
             scale(1.1);
-
     }
-
 }
 
 
 /* =========================================================
-   CLASSROOM FLOOR
+   FLOOR
 ========================================================= */
 
 .classroom-floor {
-
     position: absolute;
 
     left: 50%;
-
     bottom: 35px;
 
     transform:
         translateX(-50%);
 
     width: 650px;
-
     height: 75px;
 
     border-radius: 50%;
@@ -2728,7 +2393,6 @@
     box-shadow:
         0 0 70px
         rgba(49,111,220,.15);
-
 }
 
 
@@ -2737,7 +2401,6 @@
 ========================================================= */
 
 .floating-particle {
-
     position: absolute;
 
     color:
@@ -2746,65 +2409,57 @@
     font-size: 18px;
 
     animation:
-        particleAnimation
+        floatingParticle
         4s
         ease-in-out
         infinite;
-
 }
 
-.particle-1 {
+.p1 {
     left: 10%;
     top: 25%;
 }
 
-.particle-2 {
+.p2 {
     left: 35%;
     top: 5%;
     animation-delay: .7s;
 }
 
-.particle-3 {
+.p3 {
     right: 5%;
     top: 42%;
     animation-delay: 1.2s;
 }
 
-.particle-4 {
+.p4 {
     left: 45%;
     bottom: 15%;
     animation-delay: 1.8s;
 }
 
-.particle-5 {
+.p5 {
     right: 25%;
     top: 12%;
     animation-delay: 2.2s;
 }
 
-@keyframes particleAnimation {
+@keyframes floatingParticle {
 
     0%,
     100% {
-
         opacity: .2;
-
         transform:
             translateY(0)
-            rotate(0deg);
-
+            rotate(0);
     }
 
     50% {
-
         opacity: 1;
-
         transform:
             translateY(-20px)
             rotate(180deg);
-
     }
-
 }
 
 
@@ -2813,23 +2468,22 @@
 ========================================================= */
 
 .student-login-card {
-
     position: relative;
 
     z-index: 20;
 
     width: 400px;
 
-    padding: 38px 34px 30px;
+    padding:
+        38px 34px 30px;
 
     border-radius: 24px;
 
     background:
-
         linear-gradient(
             145deg,
-            rgba(42,44,48,.92),
-            rgba(8,9,11,.96)
+            rgba(42,44,48,.94),
+            rgba(8,9,11,.97)
         );
 
     border:
@@ -2837,7 +2491,6 @@
         rgba(255,255,255,.13);
 
     box-shadow:
-
         0 35px 100px
         rgba(0,0,0,.8),
 
@@ -2857,18 +2510,16 @@
         scale(.94);
 
     animation:
-        studentLoginAppear
-        1.2s
+        loginAppear
+        1.3s
         cubic-bezier(.16,1,.3,1)
         5.2s
         forwards;
-
 }
 
-@keyframes studentLoginAppear {
+@keyframes loginAppear {
 
     0% {
-
         opacity: 0;
 
         transform:
@@ -2876,11 +2527,9 @@
             scale(.94);
 
         filter: blur(8px);
-
     }
 
     100% {
-
         opacity: 1;
 
         transform:
@@ -2888,37 +2537,31 @@
             scale(1);
 
         filter: blur(0);
-
     }
-
 }
 
 
 /* =========================================================
-   CARD GLOW
+   CARD LIGHT
 ========================================================= */
 
-.card-glow {
-
+.card-light {
     position: absolute;
 
     top: -100px;
-
     right: -100px;
 
-    width: 200px;
-
-    height: 200px;
+    width: 220px;
+    height: 220px;
 
     border-radius: 50%;
 
     background:
-        rgba(245,190,65,.08);
+        rgba(245,190,65,.09);
 
-    filter: blur(40px);
+    filter: blur(45px);
 
     pointer-events: none;
-
 }
 
 
@@ -2927,9 +2570,7 @@
 ========================================================= */
 
 .student-access {
-
     display: flex;
-
     align-items: center;
 
     gap: 9px;
@@ -2943,26 +2584,21 @@
     font-weight: 700;
 
     letter-spacing: 2.5px;
-
 }
 
 .student-access span {
-
     width: 20px;
-
     height: 1px;
 
     background: #d4b260;
-
 }
 
 
 /* =========================================================
-   LOGIN HEADING
+   HEADER
 ========================================================= */
 
 .student-login-header h1 {
-
     margin:
         0 0 13px;
 
@@ -2980,11 +2616,9 @@
     font-weight: 500;
 
     letter-spacing: -1.5px;
-
 }
 
 .student-login-header p {
-
     margin: 0;
 
     color:
@@ -2993,7 +2627,6 @@
     font-size: 11px;
 
     line-height: 1.6;
-
 }
 
 
@@ -3002,19 +2635,14 @@
 ========================================================= */
 
 .student-login-form {
-
     margin-top: 29px;
-
 }
 
-.student-form-group {
-
+.form-group {
     margin-bottom: 17px;
-
 }
 
-.student-form-group label {
-
+.form-group label {
     display: block;
 
     margin-bottom: 7px;
@@ -3023,16 +2651,14 @@
         rgba(255,255,255,.6);
 
     font-size: 9px;
-
 }
 
-.student-form-group input {
-
+.form-group input {
     width: 100%;
-
     height: 45px;
 
-    padding: 0 13px;
+    padding:
+        0 13px;
 
     border:
         1px solid
@@ -3049,26 +2675,22 @@
 
     font-size: 11px;
 
-    transition: .25s ease;
-
+    transition:
+        .25s ease;
 }
 
-.student-form-group input::placeholder {
-
+.form-group input::placeholder {
     color:
         rgba(255,255,255,.24);
-
 }
 
-.student-form-group input:focus {
-
+.form-group input:focus {
     border-color:
         rgba(238,194,83,.75);
 
     box-shadow:
         0 0 0 3px
         rgba(238,194,83,.07);
-
 }
 
 
@@ -3076,24 +2698,18 @@
    PASSWORD
 ========================================================= */
 
-.student-password-container {
-
+.password-box {
     position: relative;
-
 }
 
-.student-password-container input {
-
+.password-box input {
     padding-right: 60px;
-
 }
 
-.student-password-container button {
-
+.password-box button {
     position: absolute;
 
     right: 12px;
-
     top: 50%;
 
     transform:
@@ -3113,13 +2729,10 @@
     letter-spacing: 1px;
 
     cursor: pointer;
-
 }
 
-.student-password-container button:hover {
-
+.password-box button:hover {
     color: #f0c45b;
-
 }
 
 
@@ -3127,8 +2740,7 @@
    OPTIONS
 ========================================================= */
 
-.student-login-options {
-
+.login-options {
     display: flex;
 
     justify-content:
@@ -3138,11 +2750,9 @@
 
     margin:
         3px 0 20px;
-
 }
 
-.student-remember {
-
+.remember {
     display: flex;
 
     align-items: center;
@@ -3153,33 +2763,25 @@
         rgba(255,255,255,.4);
 
     font-size: 9px;
-
 }
 
-.student-remember input {
-
+.remember input {
     width: 11px;
-
     height: 11px;
 
     accent-color: #eac057;
-
 }
 
-.student-forgot {
-
+.forgot {
     color: #c8a95e;
 
     font-size: 9px;
 
     text-decoration: none;
-
 }
 
-.student-forgot:hover {
-
+.forgot:hover {
     color: #f2c965;
-
 }
 
 
@@ -3187,16 +2789,13 @@
    LOGIN BUTTON
 ========================================================= */
 
-.student-login-button {
-
+.login-button {
     width: 100%;
-
     height: 46px;
 
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 12px;
@@ -3206,7 +2805,6 @@
     border-radius: 10px;
 
     background:
-
         linear-gradient(
             135deg,
             #f5d16d,
@@ -3225,34 +2823,29 @@
         0 10px 30px
         rgba(229,174,54,.22);
 
-    transition: .3s ease;
-
+    transition:
+        .3s ease;
 }
 
-.student-login-button strong {
-
+.login-button strong {
     font-size: 18px;
 
-    transition: .3s ease;
-
+    transition:
+        .3s ease;
 }
 
-.student-login-button:hover {
-
+.login-button:hover {
     transform:
         translateY(-2px);
 
     box-shadow:
         0 15px 40px
         rgba(229,174,54,.38);
-
 }
 
-.student-login-button:hover strong {
-
+.login-button:hover strong {
     transform:
         translateX(5px);
-
 }
 
 
@@ -3260,8 +2853,7 @@
    REGISTER
 ========================================================= */
 
-.student-register {
-
+.register {
     margin-top: 24px;
 
     padding-top: 20px;
@@ -3276,36 +2868,57 @@
         rgba(255,255,255,.3);
 
     font-size: 9px;
-
 }
 
-.student-register a {
-
+.register a {
     margin-left: 5px;
 
     color:
         rgba(255,255,255,.68);
 
     text-decoration: none;
-
 }
 
-.student-register a:hover {
-
+.register a:hover {
     color: #efc75f;
-
 }
 
 
 /* =========================================================
-   TABLET
+   LARGE DESKTOP
 ========================================================= */
 
-@media (max-width: 1100px) {
+@media (min-width: 1400px) {
+
+    .student-login-page {
+        padding-right: 9vw;
+    }
 
     .classroom-animation {
+        left: 5%;
+        transform:
+            translateY(-50%)
+            scale(1.05);
+    }
 
-        left: -50px;
+    .student-login-card {
+        width: 420px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP / DESKTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .student-login-page {
+        padding-right: 35px;
+    }
+
+    .classroom-animation {
+        left: -60px;
 
         transform:
             translateY(-50%)
@@ -3313,43 +2926,56 @@
 
         transform-origin:
             left center;
-
     }
 
-    .student-login-page {
-
-        padding-right: 30px;
-
+    .student-login-card {
+        width: 380px;
     }
-
 }
 
 
 /* =========================================================
-   INTRO TABLET
+   TABLET
 ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 950px) {
 
-    .digital-classroom {
+    .student-login-page {
+        justify-content: center;
 
-        left: 5%;
+        padding:
+            40px 25px;
+    }
+
+    .classroom-animation {
+        left: 50%;
+        top: 23%;
 
         transform:
-            translateY(-50%)
-            scale(.75);
+            translate(-50%,-50%)
+            scale(.55);
 
         transform-origin:
-            left center;
+            center;
 
+        opacity: .45;
     }
 
-    .education-title {
+    .student-login-card {
+        margin-top: 180px;
 
-        bottom: 8%;
-
+        width: 390px;
     }
 
+    .intro-classroom {
+        transform:
+            translate(-50%,-50%)
+            scale(.65);
+    }
+
+    .movie-icon {
+        transform: scale(.85);
+    }
 }
 
 
@@ -3357,113 +2983,110 @@
    MOBILE
 ========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 
     .student-login-page {
-
         min-height: 100vh;
 
+        padding:
+            25px 16px;
+
+        align-items: center;
+
         justify-content: center;
-
-        padding: 30px 18px;
-
     }
 
     .classroom-animation {
-
         left: 50%;
+        top: 18%;
 
-        top: 20%;
+        width: 720px;
+        height: 600px;
 
         transform:
             translate(-50%,-50%)
-            scale(.42);
+            scale(.40);
 
-        transform-origin:
-            center;
+        opacity: .38;
 
-        opacity: .55;
-
+        filter:
+            blur(.2px);
     }
 
     .student-login-card {
 
         width: 100%;
-
         max-width: 390px;
 
-        margin-top: 150px;
+        margin-top: 115px;
 
+        padding:
+            32px 25px 27px;
+
+        border-radius: 21px;
     }
 
-}
+    .student-login-header h1 {
+        font-size: 38px;
+    }
 
+    .education-intro {
+        height: 100vh;
+    }
 
-/* =========================================================
-   INTRO MOBILE
-========================================================= */
-
-@media (max-width: 650px) {
-
-    .digital-classroom {
-
-        left: -105px;
-
-        top: 40%;
+    .intro-classroom {
+        left: 50%;
+        top: 43%;
 
         transform:
-            translateY(-50%)
-            scale(.52);
-
-        transform-origin:
-            left center;
-
+            translate(-50%,-50%)
+            scale(.55);
     }
 
-    .edu-icon {
-
-        width: 42px;
-
-        height: 42px;
-
-        font-size: 20px;
-
-    }
-
-    .cap-icon {
-
-        top: 10%;
-
-        left: 42%;
-
-    }
-
-    .book-icon {
-
-        left: 5%;
-
-    }
-
-    .education-title {
-
-        font-size: 7px;
+    .movie-title {
+        font-size: 8px;
 
         letter-spacing: 3px;
 
+        gap: 10px;
     }
 
-    .title-line {
-
-        width: 18px;
-
+    .movie-line {
+        width: 25px;
     }
 
-    .intro-loading {
+    .movie-subtitle {
+        font-size: 6px;
 
-        bottom: 3%;
-
+        letter-spacing: 3px;
     }
 
+    .movie-icon {
+        width: 43px;
+        height: 43px;
+
+        font-size: 19px;
+    }
+
+    .book-icon {
+        left: 4%;
+        top: 23%;
+    }
+
+    .cap-icon {
+        left: 42%;
+        top: 10%;
+    }
+
+    .pencil-icon {
+        right: 5%;
+        top: 24%;
+    }
+
+    .bulb-icon {
+        right: 5%;
+        bottom: 22%;
+    }
 }
 
 
@@ -3473,54 +3096,157 @@
 
 @media (max-width: 450px) {
 
+    .student-login-page {
+        padding:
+            20px 13px;
+    }
+
     .student-login-card {
 
+        max-width: 100%;
+
+        margin-top: 105px;
+
         padding:
-            30px 22px 25px;
+            28px 21px 24px;
 
-        border-radius: 20px;
-
+        border-radius: 19px;
     }
 
     .student-login-header h1 {
-
-        font-size: 36px;
-
+        font-size: 34px;
     }
 
-    .student-login-options {
+    .student-login-header p {
+        font-size: 10px;
+    }
 
+    .login-options {
         flex-direction: column;
 
-        align-items: flex-start;
+        align-items:
+            flex-start;
 
         gap: 10px;
-
     }
 
-}
+    .classroom-animation {
 
+        top: 17%;
 
-/* =========================================================
-   INTRO SMALL MOBILE
-========================================================= */
+        transform:
+            translate(-50%,-50%)
+            scale(.34);
 
-@media (max-width: 400px) {
+        opacity: .3;
+    }
 
-    .education-title {
+    .intro-classroom {
 
+        transform:
+            translate(-50%,-50%)
+            scale(.45);
+    }
+
+    .movie-title {
         font-size: 6px;
 
         letter-spacing: 2px;
 
+        gap: 7px;
     }
 
-    .title-line {
-
-        width: 14px;
-
+    .movie-line {
+        width: 17px;
     }
 
+    .movie-subtitle {
+        font-size: 5px;
+
+        letter-spacing: 2px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .student-login-card {
+        margin-top: 90px;
+
+        padding:
+            25px 18px 22px;
+    }
+
+    .student-login-header h1 {
+        font-size: 31px;
+    }
+
+    .form-group input {
+        height: 43px;
+    }
+
+    .login-button {
+        height: 44px;
+    }
+
+    .classroom-animation {
+        transform:
+            translate(-50%,-50%)
+            scale(.29);
+    }
+
+    .intro-classroom {
+        transform:
+            translate(-50%,-50%)
+            scale(.38);
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+========================================================= */
+
+@media (max-height: 600px) and (max-width: 800px) {
+
+    .student-login-page {
+        align-items:
+            flex-start;
+
+        padding-top: 25px;
+
+        overflow-y: auto;
+    }
+
+    .student-login-card {
+        margin-top: 70px;
+    }
+
+    .classroom-animation {
+        top: 10%;
+
+        opacity: .25;
+    }
+
+    .intro-classroom {
+        top: 40%;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.4);
+    }
+
+    .movie-title {
+        bottom: 10%;
+    }
+
+    .movie-subtitle {
+        bottom: 5%;
+    }
 }
 
 
@@ -3531,34 +3257,38 @@
 @media (prefers-reduced-motion: reduce) {
 
     .education-intro,
-    .digital-classroom,
-    .education-title,
-    .edu-icon,
+    .intro-classroom,
+    .movie-title,
+    .movie-subtitle,
+    .intro-loader span,
     .particles span,
-    .intro-loading span {
-
+    .movie-icon,
+    .classroom-animation,
+    .teacher-main,
+    .teacher-hand,
+    .student,
+    .wifi span,
+    .floating-particle,
+    .writing-line,
+    .formula,
+    .board-content h2 {
         animation: none !important;
-
     }
 
     .education-intro {
-
         display: none;
-
     }
 
-    .student-login-page *,
-    .student-login-page *::before,
-    .student-login-page *::after {
+    .classroom-animation,
+    .student-login-card {
+        opacity: 1;
 
-        animation-duration:
-            .01ms !important;
+        transform:
+            translate(0,0)
+            scale(1);
 
-        animation-iteration-count:
-            1 !important;
-
+        filter: none;
     }
-
 }
 
 </style>
@@ -3582,29 +3312,23 @@ function toggleStudentPassword() {
             "student-password-button"
         );
 
-
     if (password.type === "password") {
 
         password.type = "text";
 
         button.textContent = "HIDE";
 
-    }
-
-    else {
+    } else {
 
         password.type = "password";
 
         button.textContent = "SHOW";
-
     }
-
 }
 
 
 /* =========================================================
-   INTRO CLEANUP
-   Removes the intro from the DOM after animation
+   CINEMATIC INTRO CLEANUP
 ========================================================= */
 
 document.addEventListener(
@@ -3616,23 +3340,72 @@ document.addEventListener(
                 "educationIntro"
             );
 
-        if (intro) {
-
-            setTimeout(
-                function () {
-
-                    intro.remove();
-
-                },
-                6200
-            );
-
+        if (!intro) {
+            return;
         }
 
+        setTimeout(
+            function () {
+
+                if (intro) {
+                    intro.remove();
+                }
+
+            },
+            7200
+        );
+
     }
+);
+
+
+/* =========================================================
+   MOBILE / DESKTOP AUTO DETECTION
+========================================================= */
+
+function updateStudentView() {
+
+    const page =
+        document.querySelector(
+            ".student-login-page"
+        );
+
+    if (!page) {
+        return;
+    }
+
+    if (window.innerWidth <= 700) {
+
+        page.classList.add(
+            "mobile-view"
+        );
+
+        page.classList.remove(
+            "desktop-view"
+        );
+
+    } else {
+
+        page.classList.add(
+            "desktop-view"
+        );
+
+        page.classList.remove(
+            "mobile-view"
+        );
+    }
+}
+
+window.addEventListener(
+    "resize",
+    updateStudentView
+);
+
+document.addEventListener(
+    "DOMContentLoaded",
+    updateStudentView
 );
 
 </script>
 
 {% endblock %}
-
