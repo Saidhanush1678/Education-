@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Registration Successful{% endblock %}
+{% block content %}
+<section class="success-page">
+    <div class="success-card">
+        <div class="success-check">✓</div>
+        <span class="eyebrow">REGISTRATION COMPLETED</span>
+        <h1>{{ reg.registration_no }}</h1>
+        <p>Your registration has been saved. The PDF and QR code were generated automatically.</p>
+
+        <div class="qr-panel">
+            {% if reg.qr_file %}
+                <img src="{{ url_for('static', filename='qrcodes/' + reg.qr_file) }}" alt="Registration QR">
+            {% endif %}
+            <div>
+                <h3>Scan to verify</h3>
+                <p>Scan this QR code with a phone camera to open the public registration record.</p>
+            </div>
+        </div>
+
+        <div class="success-actions">
+            <a class="btn primary" href="{{ url_for('registration_pdf', registration_no=reg.registration_no) }}">Download Registration PDF</a>
+            <a class="btn secondary" href="{{ url_for('public_registration', registration_no=reg.registration_no) }}">View Registration</a>
+            <a class="btn ghost" href="{{ url_for('register') }}">New Registration</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

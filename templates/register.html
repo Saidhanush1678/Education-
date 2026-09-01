@@ -1,0 +1,1625 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+Student Registration | VIJAY Educational Services
+{% endblock %}
+
+
+{% block extra_css %}
+
+<style>
+
+    /* =====================================================
+       REGISTER PAGE
+    ===================================================== */
+
+    .register-page {
+
+        max-width: 1240px;
+
+        margin: auto;
+
+        padding:
+            55px 20px 100px;
+    }
+
+
+    /* =====================================================
+       PAGE INTRO
+    ===================================================== */
+
+    .register-intro {
+
+        max-width: 850px;
+
+        margin-bottom: 42px;
+    }
+
+
+    .register-label {
+
+        font-size: 13px;
+
+        font-weight: 700;
+
+        letter-spacing: 3px;
+
+        color: #111111;
+
+        margin-bottom: 13px;
+    }
+
+
+    .register-title {
+
+        font-family:
+            "Playfair Display",
+            serif;
+
+        font-size:
+            clamp(40px, 5vw, 58px);
+
+        line-height: 1.08;
+
+        letter-spacing: -1px;
+
+        color: #101d38;
+
+        margin-bottom: 18px;
+    }
+
+
+    .register-description {
+
+        max-width: 750px;
+
+        font-size: 16px;
+
+        line-height: 1.8;
+
+        color: #536b86;
+    }
+
+
+    /* =====================================================
+       FORM CARD
+    ===================================================== */
+
+    .registration-card {
+
+        background: #ffffff;
+
+        border:
+            1px solid #dfe6ee;
+
+        border-radius: 22px;
+
+        padding: 38px;
+
+        box-shadow:
+            0 10px 35px
+            rgba(23,55,95,0.08);
+    }
+
+
+    /* =====================================================
+       FORM HEADER
+    ===================================================== */
+
+    .form-header {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 20px;
+
+        padding-bottom: 25px;
+
+        margin-bottom: 32px;
+
+        border-bottom:
+            1px solid #e5ebf2;
+    }
+
+
+    .form-header h2 {
+
+        font-family:
+            "Playfair Display",
+            serif;
+
+        font-size: 28px;
+
+        color: #101d38;
+    }
+
+
+    .form-header p {
+
+        margin-top: 5px;
+
+        font-size: 13px;
+
+        color: #687b92;
+    }
+
+
+    .required-note {
+
+        font-size: 13px;
+
+        color: #687b92;
+
+        white-space: nowrap;
+    }
+
+
+    .required {
+
+        color: #d92d20;
+    }
+
+
+    /* =====================================================
+       FORM SECTION
+    ===================================================== */
+
+    .register-section {
+
+        margin-bottom: 38px;
+    }
+
+
+    .section-heading {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 13px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .section-number {
+
+        width: 36px;
+
+        height: 36px;
+
+        min-width: 36px;
+
+        border-radius: 50%;
+
+        background: #eaf2fc;
+
+        border:
+            1px solid #cbdcf2;
+
+        color: #143d79;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-size: 14px;
+
+        font-weight: 700;
+    }
+
+
+    .section-heading h3 {
+
+        font-family:
+            "Playfair Display",
+            serif;
+
+        font-size: 22px;
+
+        color: #101d38;
+    }
+
+
+    .section-heading span {
+
+        display: block;
+
+        font-size: 12px;
+
+        color: #71839a;
+
+        margin-top: 2px;
+    }
+
+
+    /* =====================================================
+       FORM GRID
+    ===================================================== */
+
+    .form-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+
+    .form-group {
+
+        display: flex;
+
+        flex-direction: column;
+    }
+
+
+    .form-group.full {
+
+        grid-column:
+            1 / -1;
+    }
+
+
+    .form-group label {
+
+        font-size: 13px;
+
+        font-weight: 600;
+
+        color: #344965;
+
+        margin-bottom: 8px;
+    }
+
+
+    /* =====================================================
+       INPUTS
+    ===================================================== */
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+
+        width: 100%;
+
+        border:
+            1px solid #d6dee8;
+
+        background: #ffffff;
+
+        color: #14233d;
+
+        border-radius: 12px;
+
+        padding:
+            13px 14px;
+
+        font-family:
+            "DM Sans",
+            sans-serif;
+
+        font-size: 14px;
+
+        outline: none;
+
+        transition:
+            border 0.25s ease,
+            box-shadow 0.25s ease,
+            background 0.25s ease;
+    }
+
+
+    .form-group input:hover,
+    .form-group select:hover,
+    .form-group textarea:hover {
+
+        border-color: #aebdce;
+    }
+
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+
+        border-color: #174b87;
+
+        background: #fbfdff;
+
+        box-shadow:
+            0 0 0 3px
+            rgba(23,75,135,0.10);
+    }
+
+
+    .form-group textarea {
+
+        min-height: 105px;
+
+        resize: vertical;
+
+        line-height: 1.6;
+    }
+
+
+    .form-help {
+
+        margin-top: 6px;
+
+        font-size: 11px;
+
+        color: #7b8ba0;
+    }
+
+
+    /* =====================================================
+       PHOTO UPLOAD
+    ===================================================== */
+
+    .photo-box {
+
+        border:
+            1px dashed #b9c8d9;
+
+        background: #f7faff;
+
+        border-radius: 17px;
+
+        padding: 30px;
+
+        text-align: center;
+
+        transition: 0.25s ease;
+    }
+
+
+    .photo-box:hover {
+
+        border-color: #174b87;
+
+        background: #f3f8ff;
+    }
+
+
+    .photo-icon {
+
+        width: 55px;
+
+        height: 55px;
+
+        margin:
+            0 auto 14px;
+
+        border-radius: 50%;
+
+        background: #eaf2fc;
+
+        color: #174b87;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        font-size: 24px;
+    }
+
+
+    .photo-box h4 {
+
+        font-size: 15px;
+
+        color: #14233d;
+
+        margin-bottom: 5px;
+    }
+
+
+    .photo-box p {
+
+        font-size: 12px;
+
+        color: #71839a;
+
+        margin-bottom: 17px;
+    }
+
+
+    .photo-box input[type="file"] {
+
+        width: 100%;
+
+        max-width: 420px;
+
+        margin: auto;
+
+        padding: 10px;
+
+        border:
+            1px solid #d6dee8;
+
+        border-radius: 10px;
+
+        background: #ffffff;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       DECLARATION
+    ===================================================== */
+
+    .declaration {
+
+        background: #eff6fd;
+
+        border:
+            1px solid #d8e7f7;
+
+        border-radius: 15px;
+
+        padding: 20px;
+    }
+
+
+    .declaration-row {
+
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+
+    .declaration-row input {
+
+        width: 17px;
+
+        height: 17px;
+
+        min-width: 17px;
+
+        margin-top: 4px;
+
+        accent-color: #174b87;
+    }
+
+
+    .declaration-row label {
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+        color: #48617f;
+
+        cursor: pointer;
+    }
+
+
+    /* =====================================================
+       BUTTON AREA
+    ===================================================== */
+
+    .form-actions {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-end;
+
+        gap: 12px;
+
+        padding-top: 28px;
+
+        border-top:
+            1px solid #e5ebf2;
+    }
+
+
+    .reset-btn {
+
+        border:
+            1px solid #d4dce6;
+
+        background: #ffffff;
+
+        color: #344965;
+
+        padding:
+            12px 22px;
+
+        border-radius: 11px;
+
+        font-family:
+            "DM Sans",
+            sans-serif;
+
+        font-size: 14px;
+
+        font-weight: 600;
+
+        cursor: pointer;
+
+        transition: 0.25s ease;
+    }
+
+
+    .reset-btn:hover {
+
+        background: #f4f7fa;
+
+        border-color: #b8c5d4;
+    }
+
+
+    .submit-btn {
+
+        border: none;
+
+        background: #f5a623;
+
+        color: #17243a;
+
+        padding:
+            13px 27px;
+
+        border-radius: 12px;
+
+        font-family:
+            "DM Sans",
+            sans-serif;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        cursor: pointer;
+
+        box-shadow:
+            0 4px 12px
+            rgba(245,166,35,0.15);
+
+        transition: 0.25s ease;
+    }
+
+
+    .submit-btn:hover {
+
+        background: #f7a018;
+
+        transform:
+            translateY(-2px);
+
+        box-shadow:
+            0 8px 20px
+            rgba(245,166,35,0.24);
+    }
+
+
+    .submit-btn:disabled {
+
+        opacity: 0.65;
+
+        cursor: not-allowed;
+
+        transform: none;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE 800px
+    ===================================================== */
+
+    @media (max-width: 800px) {
+
+        .register-page {
+
+            padding:
+                40px 18px 70px;
+        }
+
+
+        .registration-card {
+
+            padding: 25px;
+
+            border-radius: 18px;
+        }
+
+
+        .form-grid {
+
+            grid-template-columns:
+                1fr;
+        }
+
+
+        .form-group.full {
+
+            grid-column: auto;
+        }
+
+
+        .form-header {
+
+            align-items:
+                flex-start;
+
+            flex-direction:
+                column;
+        }
+
+
+        .required-note {
+
+            white-space:
+                normal;
+        }
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE 600px
+    ===================================================== */
+
+    @media (max-width: 600px) {
+
+        .register-page {
+
+            padding:
+                30px 14px 60px;
+        }
+
+
+        .register-title {
+
+            font-size: 38px;
+        }
+
+
+        .register-description {
+
+            font-size: 14px;
+        }
+
+
+        .registration-card {
+
+            padding: 20px;
+
+            border-radius: 16px;
+        }
+
+
+        .form-header h2 {
+
+            font-size: 24px;
+        }
+
+
+        .section-heading h3 {
+
+            font-size: 20px;
+        }
+
+
+        .photo-box {
+
+            padding: 22px 15px;
+        }
+
+
+        .form-actions {
+
+            flex-direction:
+                column-reverse;
+
+            align-items:
+                stretch;
+        }
+
+
+        .reset-btn,
+        .submit-btn {
+
+            width: 100%;
+        }
+
+    }
+
+</style>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<section class="register-page">
+
+
+    <!-- =================================================
+         INTRO
+    ================================================== -->
+
+    <div class="register-intro">
+
+        <div class="register-label">
+            STUDENT REGISTRATION
+        </div>
+
+
+        <h1 class="register-title">
+            Begin Your
+            <br>
+            Learning Journey.
+        </h1>
+
+
+        <p class="register-description">
+
+            Complete the registration form below to join
+            VIJAY Educational Services. Please provide
+            accurate information so we can create your
+            student registration record.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         REGISTRATION CARD
+    ================================================== -->
+
+    <div class="registration-card">
+
+
+        <!-- FORM HEADER -->
+
+        <div class="form-header">
+
+            <div>
+
+                <h2>
+                    Registration Form
+                </h2>
+
+                <p>
+                    Please complete all required information.
+                </p>
+
+            </div>
+
+
+            <div class="required-note">
+
+                <span class="required">*</span>
+                Required fields
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FLASH MESSAGES
+        ================================================== -->
+
+        {% with messages =
+            get_flashed_messages(
+                with_categories=true
+            )
+        %}
+
+            {% if messages %}
+
+                {% for category, message in messages %}
+
+                    <div
+                        class="flash {{ category }}"
+                        style="
+                            margin-bottom:20px;
+                        "
+                    >
+
+                        {{ message }}
+
+                    </div>
+
+                {% endfor %}
+
+            {% endif %}
+
+        {% endwith %}
+
+
+
+        <!-- =================================================
+             FORM
+        ================================================== -->
+
+        <form
+            method="POST"
+            action="{{ url_for('register') }}"
+            enctype="multipart/form-data"
+            id="registrationForm"
+        >
+
+
+
+            <!-- =================================================
+                 PERSONAL DETAILS
+            ================================================== -->
+
+            <div class="register-section">
+
+
+                <div class="section-heading">
+
+                    <div class="section-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Personal Details
+                        </h3>
+
+                        <span>
+                            Basic information about the student
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-grid">
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="form-group">
+
+                        <label for="full_name">
+
+                            Full Name
+                            <span class="required">*</span>
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="full_name"
+                            name="full_name"
+                            placeholder="Enter full name"
+                            maxlength="100"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- DOB -->
+
+                    <div class="form-group">
+
+                        <label for="dob">
+                            Date of Birth
+                        </label>
+
+                        <input
+                            type="date"
+                            id="dob"
+                            name="dob"
+                        >
+
+                    </div>
+
+
+
+                    <!-- GENDER -->
+
+                    <div class="form-group">
+
+                        <label for="gender">
+                            Gender
+                        </label>
+
+                        <select
+                            id="gender"
+                            name="gender"
+                        >
+
+                            <option value="">
+                                Select Gender
+                            </option>
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+
+                            Phone Number
+                            <span class="required">*</span>
+
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter phone number"
+                            maxlength="15"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter email address"
+                        >
+
+                    </div>
+
+
+
+                    <!-- PARENT -->
+
+                    <div class="form-group">
+
+                        <label for="parent_name">
+                            Parent / Guardian Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="parent_name"
+                            name="parent_name"
+                            placeholder="Enter parent / guardian name"
+                        >
+
+                    </div>
+
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="form-group full">
+
+                        <label for="address">
+                            Complete Address
+                        </label>
+
+                        <textarea
+                            id="address"
+                            name="address"
+                            placeholder="Enter complete address"
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- CITY -->
+
+                    <div class="form-group">
+
+                        <label for="city">
+                            City
+                        </label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            placeholder="Enter city"
+                        >
+
+                    </div>
+
+
+
+                    <!-- STATE -->
+
+                    <div class="form-group">
+
+                        <label for="state">
+                            State
+                        </label>
+
+                        <input
+                            type="text"
+                            id="state"
+                            name="state"
+                            placeholder="Enter state"
+                        >
+
+                    </div>
+
+
+
+                    <!-- PINCODE -->
+
+                    <div class="form-group">
+
+                        <label for="pincode">
+                            PIN Code
+                        </label>
+
+                        <input
+                            type="text"
+                            id="pincode"
+                            name="pincode"
+                            placeholder="Enter 6-digit PIN code"
+                            maxlength="6"
+                            inputmode="numeric"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EDUCATION DETAILS
+            ================================================== -->
+
+            <div class="register-section">
+
+
+                <div class="section-heading">
+
+                    <div class="section-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Education Details
+                        </h3>
+
+                        <span>
+                            Current academic information
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-grid">
+
+
+                    <!-- QUALIFICATION -->
+
+                    <div class="form-group">
+
+                        <label for="qualification">
+                            Qualification
+                        </label>
+
+                        <select
+                            id="qualification"
+                            name="qualification"
+                        >
+
+                            <option value="">
+                                Select Qualification
+                            </option>
+
+                            <option value="10th">
+                                10th
+                            </option>
+
+                            <option value="Intermediate">
+                                Intermediate
+                            </option>
+
+                            <option value="Diploma">
+                                Diploma
+                            </option>
+
+                            <option value="B.Tech">
+                                B.Tech
+                            </option>
+
+                            <option value="B.E">
+                                B.E
+                            </option>
+
+                            <option value="B.Sc">
+                                B.Sc
+                            </option>
+
+                            <option value="B.Com">
+                                B.Com
+                            </option>
+
+                            <option value="B.A">
+                                B.A
+                            </option>
+
+                            <option value="M.Tech">
+                                M.Tech
+                            </option>
+
+                            <option value="M.Sc">
+                                M.Sc
+                            </option>
+
+                            <option value="MBA">
+                                MBA
+                            </option>
+
+                            <option value="MCA">
+                                MCA
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- INSTITUTION -->
+
+                    <div class="form-group">
+
+                        <label for="institution">
+                            Institution / College
+                        </label>
+
+                        <input
+                            type="text"
+                            id="institution"
+                            name="institution"
+                            placeholder="Enter institution / college"
+                        >
+
+                    </div>
+
+
+
+                    <!-- COURSE -->
+
+                    <div class="form-group">
+
+                        <label for="course">
+                            Course / Program
+                        </label>
+
+                        <input
+                            type="text"
+                            id="course"
+                            name="course"
+                            placeholder="Enter course / program"
+                        >
+
+                    </div>
+
+
+
+                    <!-- ACADEMIC YEAR -->
+
+                    <div class="form-group">
+
+                        <label for="academic_year">
+                            Academic Year
+                        </label>
+
+                        <select
+                            id="academic_year"
+                            name="academic_year"
+                        >
+
+                            <option value="">
+                                Select Academic Year
+                            </option>
+
+                            <option value="2025-2026">
+                                2025-2026
+                            </option>
+
+                            <option value="2026-2027">
+                                2026-2027
+                            </option>
+
+                            <option value="2027-2028">
+                                2027-2028
+                            </option>
+
+                            <option value="2028-2029">
+                                2028-2029
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PHOTOGRAPH
+            ================================================== -->
+
+            <div class="register-section">
+
+
+                <div class="section-heading">
+
+                    <div class="section-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Student Photograph
+                        </h3>
+
+                        <span>
+                            Upload a recent photograph
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="photo-box">
+
+
+                    <div class="photo-icon">
+                        📷
+                    </div>
+
+
+                    <h4>
+                        Upload Student Photo
+                    </h4>
+
+
+                    <p>
+                        JPG, JPEG, PNG or WEBP
+                    </p>
+
+
+                    <input
+                        type="file"
+                        id="photo"
+                        name="photo"
+                        accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+                    >
+
+
+                    <div class="form-help">
+                        Maximum upload size: 10 MB
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DECLARATION
+            ================================================== -->
+
+            <div class="register-section">
+
+
+                <div class="section-heading">
+
+                    <div class="section-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Declaration
+                        </h3>
+
+                        <span>
+                            Confirmation of submitted information
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="declaration">
+
+                    <div class="declaration-row">
+
+                        <input
+                            type="checkbox"
+                            id="declaration"
+                            required
+                        >
+
+
+                        <label for="declaration">
+
+                            I confirm that the information provided
+                            in this registration form is true and
+                            correct to the best of my knowledge.
+                            I understand that the information will
+                            be used for registration and educational
+                            service purposes.
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ACTIONS
+            ================================================== -->
+
+            <div class="form-actions">
+
+
+                <button
+                    type="reset"
+                    class="reset-btn"
+                >
+
+                    Clear Form
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    id="submitBtn"
+                >
+
+                    Submit Registration
+                    →
+
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+
+{% block extra_js %}
+
+<script>
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+const registrationForm =
+    document.getElementById(
+        "registrationForm"
+    );
+
+
+const submitBtn =
+    document.getElementById(
+        "submitBtn"
+    );
+
+
+const photo =
+    document.getElementById(
+        "photo"
+    );
+
+
+
+/* =====================================================
+   PHOTO VALIDATION
+===================================================== */
+
+photo.addEventListener(
+    "change",
+    function () {
+
+        if (!this.files.length) {
+            return;
+        }
+
+
+        const file =
+            this.files[0];
+
+
+        const allowedTypes = [
+            "image/jpeg",
+            "image/png",
+            "image/webp"
+        ];
+
+
+        if (
+            !allowedTypes.includes(
+                file.type
+            )
+        ) {
+
+            alert(
+                "Please upload JPG, JPEG, PNG or WEBP image."
+            );
+
+            this.value = "";
+
+            return;
+        }
+
+
+        if (
+            file.size >
+            10 * 1024 * 1024
+        ) {
+
+            alert(
+                "Photo size must be less than 10 MB."
+            );
+
+            this.value = "";
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   PHONE VALIDATION
+===================================================== */
+
+document
+    .getElementById("phone")
+    .addEventListener(
+        "input",
+        function () {
+
+            this.value =
+                this.value.replace(
+                    /[^0-9+\-\s]/g,
+                    ""
+                );
+
+        }
+    );
+
+
+
+/* =====================================================
+   PINCODE VALIDATION
+===================================================== */
+
+document
+    .getElementById("pincode")
+    .addEventListener(
+        "input",
+        function () {
+
+            this.value =
+                this.value
+                    .replace(
+                        /[^0-9]/g,
+                        ""
+                    )
+                    .slice(0, 6);
+
+        }
+    );
+
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+registrationForm.addEventListener(
+    "submit",
+    function () {
+
+        submitBtn.disabled = true;
+
+        submitBtn.innerHTML =
+            "Submitting Registration...";
+
+    }
+);
+
+</script>
+
+{% endblock %}
+

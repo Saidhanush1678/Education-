@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<section class="admin-page">
+    <div class="admin-top">
+        <div>
+            <span class="eyebrow">ADMIN CONTROL PANEL</span>
+            <h1>VIJAY Registration Dashboard</h1>
+        </div>
+        <div class="admin-actions">
+            <a class="btn primary" href="{{ url_for('download_excel') }}">Download Excel</a>
+            <a class="btn ghost" href="{{ url_for('admin_logout') }}">Logout</a>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div><span>Registrations</span><strong>{{ registrations|length }}</strong></div>
+        <div><span>Faculty Profiles</span><strong>{{ faculty|length }}</strong></div>
+    </div>
+
+    <div class="admin-card">
+        <div class="table-title">
+            <h2>Registrations</h2>
+            <span>Registration sheet</span>
+        </div>
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr><th>No.</th><th>Name</th><th>Phone</th><th>Institution</th><th>Date</th><th>Files</th></tr>
+                </thead>
+                <tbody>
+                {% for r in registrations %}
+                    <tr>
+                        <td>{{ r.registration_no }}</td>
+                        <td>{{ r.full_name }}</td>
+                        <td>{{ r.phone }}</td>
+                        <td>{{ r.institution or '—' }}</td>
+                        <td>{{ r.created_at }}</td>
+                        <td>
+                            <a href="{{ url_for('admin_registration_pdf', registration_no=r.registration_no) }}">PDF</a>
+                            {% if r.qr_file %}
+                            · <a href="{{ url_for('static', filename='qrcodes/' + r.qr_file) }}" target="_blank">QR</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr><td colspan="6">No registrations yet.</td></tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="admin-card">
+        <div class="table-title">
+            <h2>Faculty Joining</h2>
+            <span>Faculty sheet</span>
+        </div>
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr><th>No.</th><th>Name</th><th>Email</th><th>Qualification</th><th>Designation</th><th>Files</th></tr>
+                </thead>
+                <tbody>
+                {% for f in faculty %}
+                    <tr>
+                        <td>{{ f.faculty_no }}</td>
+                        <td>{{ f.full_name }}</td>
+                        <td>{{ f.email }}</td>
+                        <td>{{ f.highest_qualification or '—' }}</td>
+                        <td>{{ f.designation or '—' }}</td>
+                        <td>
+                            {% if f.cv_file %}
+                            <a href="{{ url_for('admin_cv', filename=f.cv_file) }}">CV</a>
+                            {% else %}—{% endif %}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr><td colspan="6">No faculty applications yet.</td></tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

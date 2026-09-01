@@ -1,0 +1,479 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact Us | VIJAY Educational Services
+{% endblock %}
+
+
+{% block extra_css %}
+
+<style>
+
+.contact-container {
+
+    max-width: 1240px;
+
+    margin: auto;
+
+    padding: 10px 20px 80px;
+}
+
+.contact-label {
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+}
+
+.contact-title {
+
+    max-width: 900px;
+
+    margin-top: 16px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px,5vw,58px);
+
+    line-height: 1.1;
+
+    color: #101d38;
+}
+
+.contact-description {
+
+    max-width: 760px;
+
+    margin-top: 22px;
+
+    color: #526987;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* CONTACT GRID */
+
+.contact-grid {
+
+    margin-top: 55px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.4fr;
+
+    gap: 20px;
+}
+
+
+/* INFO */
+
+.contact-info {
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    background: #eff6fd;
+}
+
+.contact-info h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
+    margin-bottom: 25px;
+}
+
+.info-item {
+
+    margin-bottom: 25px;
+}
+
+.info-item strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #14233d;
+}
+
+.info-item span {
+
+    color: #526987;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* FORM */
+
+.contact-form {
+
+    padding: 35px;
+
+    border: 1px solid #dfe6ee;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 5px 20px rgba(20,50,90,.05);
+}
+
+.contact-form h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
+    margin-bottom: 25px;
+}
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.form-group {
+
+    margin-bottom: 18px;
+}
+
+.form-group label {
+
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d5dfe9;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+
+    border-color: #174b87;
+
+    box-shadow:
+        0 0 0 3px #eaf2fc;
+}
+
+.form-group textarea {
+
+    height: 130px;
+
+    resize: vertical;
+}
+
+.submit-btn {
+
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 11px;
+
+    background: #f5a623;
+
+    color: #14233d;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.submit-btn:hover {
+
+    background: #f7a018;
+}
+
+
+@media(max-width:800px) {
+
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .form-row {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="contact-container">
+
+
+    <div class="contact-label">
+        CONTACT US
+    </div>
+
+
+    <h1 class="contact-title">
+
+        Let's start a conversation
+        about your learning journey.
+
+    </h1>
+
+
+    <p class="contact-description">
+
+        Have questions about admissions, courses,
+        academic planning or faculty opportunities?
+        Our team is ready to help you.
+
+    </p>
+
+
+    <section class="contact-grid">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <h2>
+                Get in touch
+            </h2>
+
+
+            <div class="info-item">
+
+                <strong>
+                    📍 Address
+                </strong>
+
+                <span>
+                    VIJAY Educational Services<br>
+                    Telangana, India
+                </span>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <strong>
+                    📞 Phone
+                </strong>
+
+                <span>
+                    +91 XXXXX XXXXX
+                </span>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <strong>
+                    ✉ Email
+                </strong>
+
+                <span>
+                    info@vijayeducationalservices.com
+                </span>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <strong>
+                    🕒 Working Hours
+                </strong>
+
+                <span>
+                    Monday – Saturday<br>
+                    9:00 AM – 6:00 PM
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div class="contact-form">
+
+            <h2>
+                Send us a message
+            </h2>
+
+
+            <form method="POST"
+                  action="{{ url_for('contact') }}">
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email *
+                        </label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            name="phone"
+                            placeholder="Enter phone number">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Subject
+                        </label>
+
+                        <select name="subject">
+
+                            <option value="Admission">
+                                Admission
+                            </option>
+
+                            <option value="Courses">
+                                Courses
+                            </option>
+
+                            <option value="Faculty">
+                                Faculty
+                            </option>
+
+                            <option value="Career">
+                                Career
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Message *
+                    </label>
+
+                    <textarea
+                        name="message"
+                        placeholder="Write your message..."
+                        required></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    Send Message →
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+    </section>
+
+
+</section>
+
+{% endblock %}

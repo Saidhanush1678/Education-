@@ -1,0 +1,791 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home | VIJAY Educational Services
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+    .home-hero {
+        background: linear-gradient(
+            110deg,
+            #172f69 0%,
+            #164b8e 55%,
+            #0877a4 100%
+        );
+
+        color: white;
+    }
+
+    .hero-container {
+        max-width: 1240px;
+        margin: auto;
+        padding: 70px 20px;
+
+        display: grid;
+        grid-template-columns: 1.05fr .95fr;
+        gap: 60px;
+
+        align-items: center;
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .hero-badge {
+        display: inline-block;
+        padding: 7px 14px;
+
+        border-radius: 20px;
+
+        background: rgba(255,255,255,.15);
+        border: 1px solid rgba(255,255,255,.25);
+
+        font-size: 13px;
+        font-weight: 600;
+
+        margin-bottom: 25px;
+    }
+
+    .hero-title {
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: clamp(45px, 5vw, 67px);
+
+        line-height: 1.05;
+
+        margin: 0 0 25px;
+    }
+
+    .hero-title span {
+        color: #f5a623;
+    }
+
+    .hero-description {
+        color: rgba(255,255,255,.85);
+
+        font-size: 17px;
+
+        line-height: 1.7;
+
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+
+        margin-bottom: 45px;
+    }
+
+    .hero-btn {
+        display: inline-block;
+
+        padding: 14px 24px;
+
+        border-radius: 12px;
+
+        text-decoration: none;
+
+        font-weight: 700;
+
+        transition: .25s;
+    }
+
+    .hero-btn:hover {
+        transform: translateY(-3px);
+    }
+
+    .hero-primary {
+        background: #f5a623;
+        color: #111e38;
+    }
+
+    .hero-secondary {
+        border: 1px solid rgba(255,255,255,.4);
+        color: white;
+        background: rgba(255,255,255,.05);
+    }
+
+    .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+    }
+
+    .hero-stat strong {
+        display: block;
+
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: 28px;
+
+        margin-bottom: 5px;
+    }
+
+    .hero-stat span {
+        font-size: 11px;
+
+        color: rgba(255,255,255,.72);
+
+        text-transform: uppercase;
+
+        line-height: 1.4;
+    }
+
+
+    /* =====================================================
+       HERO CLASSROOM IMAGE
+    ====================================================== */
+
+    .hero-image-card {
+        min-height: 380px;
+
+        height: 450px;
+
+        border-radius: 28px;
+
+        overflow: hidden;
+
+        background: #e8f0f7;
+
+        box-shadow:
+            0 25px 60px rgba(0,0,0,.22);
+
+        position: relative;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
+
+        display: block;
+
+        transition: transform .6s ease;
+    }
+
+    .hero-image-card:hover .hero-image {
+        transform: scale(1.04);
+    }
+
+
+    /* IMAGE OVERLAY */
+
+    .hero-image-card::after {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background:
+            linear-gradient(
+                to top,
+                rgba(8, 35, 75, .35),
+                transparent 55%
+            );
+
+        pointer-events: none;
+    }
+
+
+    /* =====================================================
+       PROGRAMMES
+    ====================================================== */
+
+    .programmes {
+        max-width: 1240px;
+
+        margin: auto;
+
+        padding: 80px 20px;
+    }
+
+    .section-label {
+        color: #162e67;
+
+        font-size: 13px;
+
+        font-weight: 700;
+
+        letter-spacing: 3px;
+    }
+
+    .section-title {
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: 42px;
+
+        color: #101d38;
+
+        margin: 12px 0 15px;
+    }
+
+    .section-text {
+        max-width: 720px;
+
+        color: #526985;
+
+        line-height: 1.7;
+    }
+
+    .programme-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 18px;
+
+        margin-top: 40px;
+    }
+
+    .programme-card {
+        border: 1px solid #dfe6ee;
+
+        border-radius: 20px;
+
+        padding: 27px;
+
+        background: white;
+
+        transition: .25s;
+    }
+
+    .programme-card:hover {
+        transform: translateY(-5px);
+
+        box-shadow:
+            0 15px 35px rgba(20,50,90,.1);
+    }
+
+    .programme-icon {
+        width: 48px;
+        height: 48px;
+
+        border-radius: 50%;
+
+        background: #e5efff;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 18px;
+
+        font-size: 20px;
+    }
+
+    .programme-card h3 {
+        font-family: Georgia, "Times New Roman", serif;
+
+        color: #101d38;
+
+        margin-bottom: 10px;
+    }
+
+    .programme-card p {
+        color: #526985;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+    .view-courses {
+        display: inline-block;
+
+        margin-top: 35px;
+
+        background: #f5a623;
+
+        color: #111e38;
+
+        text-decoration: none;
+
+        padding: 13px 24px;
+
+        border-radius: 11px;
+
+        font-weight: 700;
+
+        transition: .25s;
+    }
+
+    .view-courses:hover {
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 8px 20px rgba(245,166,35,.25);
+    }
+
+
+    /* =====================================================
+       CTA
+    ====================================================== */
+
+    .home-cta {
+        max-width: 1200px;
+
+        margin: 0 auto 80px;
+
+        padding: 50px;
+
+        border-radius: 26px;
+
+        background:
+            linear-gradient(
+                110deg,
+                #172f69,
+                #0877a4
+            );
+
+        color: white;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        gap: 30px;
+    }
+
+    .home-cta h2 {
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: 35px;
+
+        margin: 0 0 10px;
+    }
+
+    .home-cta p {
+        color: rgba(255,255,255,.8);
+
+        margin: 0;
+    }
+
+    .cta-button {
+        background: #f5a623;
+
+        color: #111e38;
+
+        padding: 14px 25px;
+
+        border-radius: 12px;
+
+        text-decoration: none;
+
+        font-weight: 700;
+
+        white-space: nowrap;
+
+        transition: .25s;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 8px 20px rgba(245,166,35,.3);
+    }
+
+
+    /* =====================================================
+       TABLET
+    ====================================================== */
+
+    @media(max-width:1000px) {
+
+        .hero-container {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-content {
+            max-width: 100%;
+        }
+
+        .hero-image-card {
+            height: 420px;
+        }
+
+        .programme-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media(max-width:650px) {
+
+        .hero-container {
+            padding: 50px 20px;
+        }
+
+        .hero-stats {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .programme-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-title {
+            font-size: 43px;
+        }
+
+        .hero-description {
+            font-size: 15px;
+        }
+
+        .hero-image-card {
+            min-height: 300px;
+            height: 320px;
+
+            border-radius: 20px;
+        }
+
+        .home-cta {
+            margin-left: 20px;
+            margin-right: 20px;
+
+            padding: 32px;
+
+            flex-direction: column;
+
+            align-items: flex-start;
+        }
+
+        .home-cta h2 {
+            font-size: 29px;
+        }
+
+    }
+
+</style>
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="home-hero">
+
+
+<div class="hero-container">
+
+
+    <!-- =================================================
+         HERO CONTENT
+    ================================================== -->
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            Admissions Open · 2026–27 Batches
+        </span>
+
+
+        <h1 class="hero-title">
+
+            Your Success Starts With
+            <br>
+
+            the <span>Right Preparation.</span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Comprehensive IIT-JEE, NEET and
+            EAPCET preparation with expert faculty,
+            structured academic planning, daily
+            practice, mock examinations and
+            continuous student support.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+            <!-- EXPLORE COURSES -->
+
+            <a href="{{ url_for('courses') }}"
+               class="hero-btn hero-primary">
+
+                Explore Courses →
+
+            </a>
+
+
+            <!-- REGISTRATION -->
+
+            <a href="{{ url_for('register') }}"
+               class="hero-btn hero-secondary">
+
+                Enroll Now
+
+            </a>
+
+
+            <!-- STUDENT LOGIN -->
+
+            <a href="{{ url_for('admin_login') }}"
+               class="hero-btn hero-secondary">
+
+                Student Login
+
+            </a>
+
+
+        </div>
+
+
+        <!-- =================================================
+             HERO STATS
+        ================================================== -->
+
+        <div class="hero-stats">
+
+            <div class="hero-stat">
+
+                <strong>18+ yrs</strong>
+
+                <span>
+                    Experienced<br>
+                    Faculty
+                </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <strong>365 DPPs</strong>
+
+                <span>
+                    Daily<br>
+                    Practice
+                </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <strong>120+ /yr</strong>
+
+                <span>
+                    Mock<br>
+                    Tests
+                </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <strong>900+</strong>
+
+                <span>
+                    Recorded<br>
+                    Lectures
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         CLASSROOM IMAGE
+    ================================================== -->
+
+    <div class="hero-image-card">
+
+        <img
+            src="{{ url_for('static', filename='images/classroom.jpg') }}"
+            class="hero-image"
+            alt="Students learning in classroom">
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+<!-- =====================================================
+     PROGRAMMES
+====================================================== -->
+
+<section class="programmes">
+
+<div class="section-label">
+    OUR PROGRAMMES
+</div>
+
+
+<h2 class="section-title">
+    Find the right course for your goal.
+</h2>
+
+
+<p class="section-text">
+
+    From foundation programmes for Classes 6–10
+    to intensive IIT-JEE, NEET and EAPCET
+    preparation, choose a programme designed
+    around your academic needs.
+
+</p>
+
+
+<div class="programme-grid">
+
+
+    <!-- IIT JEE -->
+
+    <div class="programme-card">
+
+        <div class="programme-icon">
+            ⚛
+        </div>
+
+        <h3>
+            IIT-JEE
+        </h3>
+
+        <p>
+            Complete JEE Main and Advanced
+            preparation with concept building,
+            practice and mock tests.
+        </p>
+
+    </div>
+
+
+    <!-- NEET -->
+
+    <div class="programme-card">
+
+        <div class="programme-icon">
+            🧬
+        </div>
+
+        <h3>
+            NEET
+        </h3>
+
+        <p>
+            NCERT-focused preparation in
+            Physics, Chemistry and Biology.
+        </p>
+
+    </div>
+
+
+    <!-- EAPCET -->
+
+    <div class="programme-card">
+
+        <div class="programme-icon">
+            📐
+        </div>
+
+        <h3>
+            EAPCET
+        </h3>
+
+        <p>
+            Speed, accuracy and complete
+            syllabus preparation for EAPCET.
+        </p>
+
+    </div>
+
+
+    <!-- FOUNDATION -->
+
+    <div class="programme-card">
+
+        <div class="programme-icon">
+            🎓
+        </div>
+
+        <h3>
+            Foundation
+        </h3>
+
+        <p>
+            Classes 6–10 programme focused on
+            strong concepts and analytical thinking.
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<!-- VIEW ALL COURSES -->
+
+<a href="{{ url_for('courses') }}"
+   class="view-courses">
+
+    View All Courses →
+
+</a>
+```
+
+</section>
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+
+<section class="home-cta">
+
+
+<div>
+
+    <h2>
+        Ready to start your preparation?
+    </h2>
+
+    <p>
+        Explore our programmes and choose
+        the right path for your academic goals.
+    </p>
+
+</div>
+
+
+<a href="{{ url_for('courses') }}"
+   class="cta-button">
+
+    Explore Courses →
+
+</a>
+
+
+</section>
+
+{% endblock %}

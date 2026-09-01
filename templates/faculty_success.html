@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Faculty Application Submitted{% endblock %}
+{% block content %}
+<section class="success-page">
+    <div class="success-card">
+        <div class="success-check">✓</div>
+        <span class="eyebrow">FACULTY APPLICATION RECEIVED</span>
+        <h1>{{ faculty_no }}</h1>
+        <p>Your faculty profile has been saved and added to the <b>Faculty</b> sheet in the Excel workbook.</p>
+        <div class="success-actions">
+            <a class="btn primary" href="{{ url_for('faculty') }}">Submit Another Profile</a>
+            <a class="btn secondary" href="{{ url_for('home') }}">Back to Home</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

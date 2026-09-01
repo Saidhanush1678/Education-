@@ -5,341 +5,354 @@ Careers | VIJAY Educational Services
 {% endblock %}
 
 
+{% block extra_css %}
+
+<style>
+
+.careers-container {
+
+    max-width: 1240px;
+
+    margin: auto;
+
+    padding: 10px 20px 80px;
+}
+
+.careers-label {
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+}
+
+.careers-title {
+
+    max-width: 900px;
+
+    margin-top: 16px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px,5vw,58px);
+
+    line-height: 1.1;
+
+    color: #101d38;
+}
+
+.careers-description {
+
+    max-width: 780px;
+
+    margin-top: 22px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #526987;
+}
+
+
+/* JOB CARDS */
+
+.jobs {
+
+    margin-top: 55px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+.job {
+
+    border: 1px solid #dfe6ee;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    transition: .3s;
+}
+
+.job:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(20,50,90,.10);
+}
+
+.job-tag {
+
+    display: inline-block;
+
+    padding: 6px 11px;
+
+    background: #e8f1fc;
+
+    color: #174b87;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.job h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    margin-top: 18px;
+
+    margin-bottom: 10px;
+}
+
+.job p {
+
+    color: #526987;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+.apply-btn {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 11px 20px;
+
+    border-radius: 11px;
+
+    background: #f5a623;
+
+    color: #14233d;
+
+    font-weight: 700;
+
+    font-size: 14px;
+}
+
+
+/* JOIN SECTION */
+
+.join {
+
+    margin-top: 60px;
+
+    padding: 45px;
+
+    border-radius: 27px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #152e68,
+            #076b9b
+        );
+
+    color: white;
+}
+
+.join h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 38px;
+
+    margin-bottom: 12px;
+}
+
+.join p {
+
+    max-width: 700px;
+
+    color: rgba(255,255,255,.82);
+
+    line-height: 1.7;
+}
+
+
+@media(max-width:700px) {
+
+    .jobs {
+
+        grid-template-columns: 1fr;
+    }
+
+    .join {
+
+        padding: 30px;
+    }
+
+}
+
+</style>
+
+{% endblock %}
+
+
 {% block content %}
 
-
-<section class="careers section-pale">
-
-
-<div class="careers-copy">
+<section class="careers-container">
 
 
-<span class="eyebrow">
-● JOIN THE FACULTY
-</span>
+    <div class="careers-label">
+        CAREERS
+    </div>
 
 
-<h1>
+    <h1 class="careers-title">
 
-Good teaching
+        Build the future of education
+        with us.
 
-<br>
-
-changes
-<em>
-everything.
-</em>
-
-</h1>
+    </h1>
 
 
-<p>
+    <p class="careers-description">
 
-We are building a faculty of
-patient thinkers, excellent
-communicators and people who
-genuinely care about what happens
-next for a student.
+        We are always looking for passionate
+        teachers, mentors, academic coordinators
+        and technology professionals who want to
+        make a meaningful difference in students'
+        learning journeys.
 
-</p>
-
-
-<button
-class="btn btn-outline"
-data-open-faculty
->
-
-Share your profile
-
-<span>
-↗
-</span>
-
-</button>
+    </p>
 
 
-</div>
+    <section class="jobs">
 
 
+        <div class="job">
 
-<div class="roles">
+            <span class="job-tag">
+                FACULTY
+            </span>
 
+            <h3>
+                Subject Faculty
+            </h3>
 
-<button
-class="role"
-data-role="Subject Faculty"
->
+            <p>
+                Join our teaching team and help
+                students develop strong concepts
+                and problem-solving skills.
+            </p>
 
-<span>
-01
-</span>
+            <a href="{{ url_for('contact') }}"
+               class="apply-btn">
+                Apply Now →
+            </a>
 
-
-<div>
-
-<strong>
-Subject Faculty
-</strong>
-
-<small>
-Shape minds through mastery.
-</small>
-
-</div>
+        </div>
 
 
-<b>
-⌄
-</b>
+        <div class="job">
 
-</button>
+            <span class="job-tag">
+                ACADEMIC
+            </span>
 
+            <h3>
+                Academic Mentor
+            </h3>
 
+            <p>
+                Guide students through their
+                preparation journey, monitor
+                performance and provide mentoring.
+            </p>
 
-<button
-class="role"
-data-role="Academic Mentor"
->
+            <a href="{{ url_for('contact') }}"
+               class="apply-btn">
+                Apply Now →
+            </a>
 
-<span>
-02
-</span>
-
-
-<div>
-
-<strong>
-Academic Mentors
-</strong>
-
-<small>
-Make every student feel seen.
-</small>
-
-</div>
+        </div>
 
 
-<b>
-⌄
-</b>
+        <div class="job">
 
-</button>
+            <span class="job-tag">
+                ADMINISTRATION
+            </span>
 
+            <h3>
+                Academic Coordinator
+            </h3>
 
+            <p>
+                Coordinate academic schedules,
+                assessments, student records and
+                communication with parents.
+            </p>
 
-<button
-class="role"
-data-role="Learning Designer"
->
+            <a href="{{ url_for('contact') }}"
+               class="apply-btn">
+                Apply Now →
+            </a>
 
-<span>
-03
-</span>
-
-
-<div>
-
-<strong>
-Learning Designers
-</strong>
-
-<small>
-Build what makes learning stick.
-</small>
-
-</div>
+        </div>
 
 
-<b>
-⌄
-</b>
+        <div class="job">
 
-</button>
+            <span class="job-tag">
+                TECHNOLOGY
+            </span>
+
+            <h3>
+                Education Technology Associate
+            </h3>
+
+            <p>
+                Support digital learning platforms,
+                online classes, student systems and
+                educational technology initiatives.
+            </p>
+
+            <a href="{{ url_for('contact') }}"
+               class="apply-btn">
+                Apply Now →
+            </a>
+
+        </div>
 
 
-</div>
+    </section>
+
+
+    <section class="join">
+
+        <h2>
+            Don't see your role?
+        </h2>
+
+        <p>
+
+            We welcome applications from people
+            who are passionate about education.
+            Send us your profile and tell us how
+            you can contribute to VIJAY Educational
+            Services.
+
+        </p>
+
+    </section>
 
 
 </section>
-
-
-
-<!-- FACULTY MODAL -->
-
-<div
-class="modal"
-id="facultyModal"
-aria-hidden="true"
->
-
-
-<div
-class="modal-backdrop"
-data-close-faculty
-></div>
-
-
-<div class="modal-card faculty-modal">
-
-
-<button
-class="modal-close"
-data-close-faculty
->
-×
-</button>
-
-
-<span class="eyebrow">
-● FACULTY APPLICATION
-</span>
-
-
-<h2>
-
-Teach what
-
-<br>
-
-<em>
-matters.
-</em>
-
-</h2>
-
-
-<p>
-
-Tell us about yourself and attach
-your CV. We’re always looking for
-people who care deeply about learning.
-
-</p>
-
-
-<form
-action="{{ url_for('faculty_apply') }}"
-method="post"
-enctype="multipart/form-data"
->
-
-
-<label>
-
-Full name
-
-<input
-name="full_name"
-required
->
-
-</label>
-
-
-<div class="form-grid">
-
-
-<label>
-
-Email
-
-<input
-type="email"
-name="email"
-required
->
-
-</label>
-
-
-<label>
-
-Phone
-
-<input
-name="phone"
-required
->
-
-</label>
-
-
-</div>
-
-
-<label>
-
-Role
-
-<select
-name="role"
-id="roleSelect"
->
-
-<option>
-Subject Faculty
-</option>
-
-<option>
-Academic Mentor
-</option>
-
-<option>
-Learning Designer
-</option>
-
-</select>
-
-</label>
-
-
-<label>
-
-CV / Resume
-
-<input
-type="file"
-name="cv"
-accept=".pdf,.doc,.docx"
->
-
-</label>
-
-
-<label>
-
-Short note
-
-<small>
-optional
-</small>
-
-<textarea
-name="note"
-></textarea>
-
-</label>
-
-
-<button
-class="btn btn-dark full"
-type="submit"
->
-
-Send profile
-<span>
-→
-</span>
-
-</button>
-
-
-</form>
-
-
-</div>
-
-
-</div>
 
 {% endblock %}

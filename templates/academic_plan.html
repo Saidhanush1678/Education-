@@ -1,0 +1,401 @@
+{% extends "base.html" %}
+
+{% block title %}
+Academic Plan | VIJAY Educational Services
+{% endblock %}
+
+
+{% block extra_css %}
+
+<style>
+
+.plan-container {
+
+    max-width: 1240px;
+
+    margin: auto;
+
+    padding: 10px 20px 80px;
+}
+
+.plan-label {
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+}
+
+.plan-title {
+
+    max-width: 900px;
+
+    margin-top: 16px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px,5vw,58px);
+
+    line-height: 1.1;
+
+    color: #101d38;
+}
+
+.plan-description {
+
+    max-width: 780px;
+
+    margin-top: 22px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #526987;
+}
+
+
+/* PHASES */
+
+.phases {
+
+    margin-top: 55px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 18px;
+}
+
+.phase {
+
+    padding: 30px;
+
+    border: 1px solid #dfe6ee;
+
+    border-radius: 20px;
+
+    background: white;
+
+    transition: .3s;
+}
+
+.phase:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(20,50,90,.10);
+}
+
+.phase-number {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #e2efff;
+
+    color: #073b88;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.phase h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.phase p {
+
+    color: #526987;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+
+/* PLAN STRIP */
+
+.plan-strip {
+
+    margin-top: 60px;
+
+    background: #eff6fd;
+
+    border-radius: 27px;
+
+    padding: 35px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 25px;
+}
+
+.plan-item strong {
+
+    display: block;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    margin-bottom: 7px;
+}
+
+.plan-item span {
+
+    color: #526987;
+
+    font-size: 14px;
+}
+
+
+@media(max-width:700px) {
+
+    .phases {
+
+        grid-template-columns: 1fr;
+    }
+
+    .plan-strip {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="plan-container">
+
+
+    <div class="plan-label">
+        ACADEMIC PLAN
+    </div>
+
+
+    <h1 class="plan-title">
+
+        A structured learning plan
+        designed for every stage.
+
+    </h1>
+
+
+    <p class="plan-description">
+
+        Our academic system combines concept
+        development, classroom teaching, daily
+        practice, testing, analysis and personal
+        mentorship to create a complete preparation
+        journey.
+
+    </p>
+
+
+    <section class="phases">
+
+
+        <div class="phase">
+
+            <div class="phase-number">
+                01
+            </div>
+
+            <h3>
+                Foundation
+            </h3>
+
+            <p>
+                Build strong fundamentals and
+                understand the basic concepts
+                required for competitive examinations.
+            </p>
+
+        </div>
+
+
+        <div class="phase">
+
+            <div class="phase-number">
+                02
+            </div>
+
+            <h3>
+                Concept Development
+            </h3>
+
+            <p>
+                Detailed classroom teaching helps
+                students understand concepts and
+                apply them to different problems.
+            </p>
+
+        </div>
+
+
+        <div class="phase">
+
+            <div class="phase-number">
+                03
+            </div>
+
+            <h3>
+                Daily Practice
+            </h3>
+
+            <p>
+                Regular problem solving and daily
+                practice improve speed, accuracy
+                and confidence.
+            </p>
+
+        </div>
+
+
+        <div class="phase">
+
+            <div class="phase-number">
+                04
+            </div>
+
+            <h3>
+                Weekly Assessment
+            </h3>
+
+            <p>
+                Regular tests help students identify
+                their strengths and understand the
+                topics requiring improvement.
+            </p>
+
+        </div>
+
+
+        <div class="phase">
+
+            <div class="phase-number">
+                05
+            </div>
+
+            <h3>
+                Mock Examinations
+            </h3>
+
+            <p>
+                Full-length mock examinations
+                provide realistic examination
+                practice and improve time management.
+            </p>
+
+        </div>
+
+
+        <div class="phase">
+
+            <div class="phase-number">
+                06
+            </div>
+
+            <h3>
+                Final Preparation
+            </h3>
+
+            <p>
+                Revision, performance analysis and
+                personalised mentoring prepare
+                students for the final examination.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <section class="plan-strip">
+
+
+        <div class="plan-item">
+
+            <strong>
+                Daily
+            </strong>
+
+            <span>
+                Practice & Learning
+            </span>
+
+        </div>
+
+
+        <div class="plan-item">
+
+            <strong>
+                Weekly
+            </strong>
+
+            <span>
+                Assessment
+            </span>
+
+        </div>
+
+
+        <div class="plan-item">
+
+            <strong>
+                Monthly
+            </strong>
+
+            <span>
+                Performance Review
+            </span>
+
+        </div>
+
+
+        <div class="plan-item">
+
+            <strong>
+                Regular
+            </strong>
+
+            <span>
+                Parent Mentoring
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+</section>
+
+{% endblock %}

@@ -1,149 +1,846 @@
 {% extends "base.html" %}
 
-{% block title %}
-Courses | VIJAY Educational Services
-{% endblock %}
-
+{% block title %}Courses | VIJAY Educational Services{% endblock %}
 
 {% block content %}
 
-<section class="page-hero">
+<style>
+
+    .courses-page {
+        background: #f8fafc;
+        padding: 55px 20px 90px;
+        min-height: 700px;
+    }
+
+    .courses-container {
+        max-width: 1240px;
+        margin: auto;
+    }
+
+    .courses-header {
+        margin-bottom: 45px;
+    }
+
+    .courses-label {
+        color: #162e67;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 14px;
+    }
+
+    .courses-header h1 {
+        font-family: Georgia, "Times New Roman", serif;
+        color: #101d38;
+        font-size: 52px;
+        line-height: 1.1;
+        margin: 0 0 15px;
+    }
+
+    .courses-header p {
+        max-width: 760px;
+        color: #536985;
+        font-size: 17px;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    .course-card {
+        background: #ffffff;
+        border: 1px solid #dfe6ee;
+        border-radius: 22px;
+        padding: 35px;
+        margin-bottom: 28px;
+        display: grid;
+        grid-template-columns: 1fr 470px;
+        gap: 45px;
+        box-shadow: 0 10px 30px rgba(18, 44, 78, 0.06);
+    }
+
+    .course-left {
+        min-width: 0;
+    }
+
+    .course-tag {
+        display: inline-block;
+        background: #edf3fc;
+        color: #12336f;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 18px;
+    }
+
+    .course-left h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 29px;
+        color: #111e38;
+        margin: 0 0 15px;
+    }
+
+    .course-description {
+        color: #526985;
+        font-size: 16px;
+        line-height: 1.65;
+        margin-bottom: 20px;
+    }
+
+    .course-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-bottom: 22px;
+        color: #3d5878;
+        font-size: 15px;
+    }
+
+    .course-info span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .info-icon {
+        color: #102f67;
+        font-size: 18px;
+    }
+
+    .course-features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 30px;
+    }
+
+    .course-feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        color: #425e7e;
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .check {
+        color: #0a9b4a;
+        font-weight: bold;
+        font-size: 17px;
+        flex-shrink: 0;
+    }
+
+    .course-right {
+        background: #f0f5fb;
+        border-radius: 23px;
+        padding: 32px 27px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .fee-label {
+        color: #405c7c;
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+
+    .course-fee {
+        font-family: Georgia, "Times New Roman", serif;
+        color: #101d38;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .course-students {
+        color: #526985;
+        font-size: 15px;
+        line-height: 1.55;
+        margin-bottom: 25px;
+    }
+
+    .course-button {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        padding: 12px 18px;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        transition: .25s;
+    }
+
+    .course-button:hover {
+        transform: translateY(-2px);
+    }
+
+    .details-button {
+        background: linear-gradient(90deg, #f5ad20, #ef8519);
+        color: #111;
+    }
+
+    .enroll-button {
+        background: #ffffff;
+        color: #111e38;
+        border: 1px solid #d5dee8;
+        box-shadow: 0 2px 4px rgba(0,0,0,.05);
+    }
+
+    .course-button:last-child {
+        margin-bottom: 0;
+    }
+
+    /* CTA */
+
+    .courses-cta {
+        background: linear-gradient(110deg, #172f69, #0877a4);
+        border-radius: 25px;
+        padding: 45px;
+        margin-top: 55px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .courses-cta h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 34px;
+        margin: 0 0 10px;
+    }
+
+    .courses-cta p {
+        color: rgba(255,255,255,.8);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .cta-enroll {
+        background: #f5a623;
+        color: #111e38;
+        text-decoration: none;
+        padding: 14px 27px;
+        border-radius: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+
+        .course-card {
+            grid-template-columns: 1fr;
+        }
+
+        .course-right {
+            max-width: 100%;
+        }
+
+        .course-features {
+            grid-template-columns: 1fr 1fr;
+        }
+
+    }
+
+
+    @media (max-width: 650px) {
+
+        .courses-page {
+            padding: 35px 15px 60px;
+        }
+
+        .courses-header h1 {
+            font-size: 39px;
+        }
+
+        .course-card {
+            padding: 23px;
+        }
+
+        .course-left h2 {
+            font-size: 25px;
+        }
+
+        .course-features {
+            grid-template-columns: 1fr;
+        }
+
+        .course-right {
+            padding: 25px 20px;
+        }
+
+        .courses-cta {
+            padding: 30px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .courses-cta h2 {
+            font-size: 28px;
+        }
+
+    }
+
+</style>
+
+
+<section class="courses-page">
+
+    <div class="courses-container">
+
+
+        <!-- HEADER -->
+
+        <div class="courses-header">
+
+            <div class="courses-label">
+                OUR COURSES
+            </div>
+
+            <h1>
+                Programmes designed<br>
+                around student success.
+            </h1>
+
+            <p>
+                Structured preparation programmes for
+                competitive examinations and school students,
+                with expert teaching, daily practice,
+                previous-year papers, mock tests and
+                performance analysis.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             IIT JEE
+        ================================================== -->
+
+        <div class="course-card">
+
+            <div class="course-left">
+
+                <span class="course-tag">
+                    IIT-JEE
+                </span>
+
+                <h2>
+                    IIT-JEE Preparation
+                </h2>
+
+                <p class="course-description">
+
+                    A complete programme covering the full
+                    JEE Main and Advanced syllabus with
+                    concept building, daily practice and
+                    rigorous test discipline.
+
+                </p>
+
+
+                <div class="course-info">
+
+                    <span>
+                        <span class="info-icon">◷</span>
+                        24 months · 2 years
+                    </span>
+
+                    <span>
+                        <span class="info-icon">▣</span>
+                        Physics · Chemistry · Mathematics
+                    </span>
+
+                </div>
+
+
+                <div class="course-features">
+
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Concept building from first principles
+                        </span>
+                    </div>
+
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Advanced problem solving workshops
+                        </span>
+                    </div>
+
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Previous year question banks
+                            (2005 onwards)
+                        </span>
+                    </div>
+
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Weekly part tests and full-length
+                            mock tests
+                        </span>
+                    </div>
+
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Daily Practice Problems with
+                            detailed solutions
+                        </span>
+                    </div>
+
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Recorded lectures for every
+                            live session
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="course-right">
+
+                <div class="fee-label">
+                    COURSE FEE
+                </div>
+
+                <div class="course-fee">
+                    ₹78,000
+                </div>
+
+                <div class="course-students">
+                    Students entering Class 11,
+                    Class 12 or repeaters
+                    preparing for JEE
+                </div>
+
+                <a href="#"
+                   class="course-button details-button">
+                    View course details
+                </a>
+
+                <a href="{{ url_for('register') }}"
+                   class="course-button enroll-button">
+                    Enroll Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             NEET
+        ================================================== -->
+
+        <div class="course-card">
+
+            <div class="course-left">
+
+                <span class="course-tag">
+                    NEET
+                </span>
+
+                <h2>
+                    NEET Preparation
+                </h2>
+
+                <p class="course-description">
+
+                    NCERT-focused NEET coaching in Physics,
+                    Chemistry and Biology with concept
+                    reinforcement, regular testing and
+                    intensive question practice.
+
+                </p>
+
+
+                <div class="course-info">
+
+                    <span>
+                        <span class="info-icon">◷</span>
+                        24 months · 2 years
+                    </span>
+
+                    <span>
+                        <span class="info-icon">▣</span>
+                        Physics · Chemistry · Biology
+                    </span>
 
-<span class="eyebrow">
-● OUR PATHWAYS
-</span>
+                </div>
 
 
-<h1>
+                <div class="course-features">
 
-Learning with
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            NCERT concept-based preparation
+                        </span>
+                    </div>
 
-<br>
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            NEET pattern chapter tests
+                        </span>
+                    </div>
 
-<em>
-purpose.
-</em>
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Previous year question papers
+                        </span>
+                    </div>
 
-</h1>
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Full-length NEET mock tests
+                        </span>
+                    </div>
 
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Biology revision and practice
+                        </span>
+                    </div>
 
-<p>
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Performance analysis and mentoring
+                        </span>
+                    </div>
 
-Choose a pathway designed around
-where you are now and where you
-want to go next.
+                </div>
 
-</p>
+            </div>
 
-</section>
 
+            <div class="course-right">
+
+                <div class="fee-label">
+                    COURSE FEE
+                </div>
+
+                <div class="course-fee">
+                    ₹72,000
+                </div>
+
+                <div class="course-students">
+                    Students entering Class 11,
+                    Class 12 or repeaters
+                    preparing for NEET
+                </div>
+
+                <a href="#"
+                   class="course-button details-button">
+                    View course details
+                </a>
+
+                <a href="{{ url_for('register') }}"
+                   class="course-button enroll-button">
+                    Enroll Now
+                </a>
+
+            </div>
 
+        </div>
+
+
+        <!-- =================================================
+             EAPCET
+        ================================================== -->
+
+        <div class="course-card">
 
-<section class="courses-list">
+            <div class="course-left">
+
+                <span class="course-tag">
+                    EAPCET
+                </span>
+
+                <h2>
+                    EAPCET Preparation
+                </h2>
+
+                <p class="course-description">
+
+                    Focused EAPCET preparation built around
+                    speed, accuracy and complete syllabus
+                    coverage aligned to the state intermediate
+                    curriculum.
+
+                </p>
 
 
-{% for c in courses %}
+                <div class="course-info">
 
+                    <span>
+                        <span class="info-icon">◷</span>
+                        12 months · 1 year
+                    </span>
 
-<article class="course-large">
+                    <span>
+                        <span class="info-icon">▣</span>
+                        Physics · Chemistry · Mathematics /
+                        Biology
+                    </span>
 
+                </div>
 
-<div class="course-number">
 
-0{{ loop.index }}
+                <div class="course-features">
 
-</div>
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            EAPCET-pattern chapter tests
+                            every week
+                        </span>
+                    </div>
 
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Speed and accuracy training drills
+                        </span>
+                    </div>
 
-<div class="course-content">
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Previous 15 years' solved papers
+                        </span>
+                    </div>
 
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Shortcut and formula workshops
+                        </span>
+                    </div>
 
-<small>
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Grand tests with state-level
+                            rank prediction
+                        </span>
+                    </div>
 
-THE PATHWAY ·
-{{ c.category }}
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Daily practice papers with
+                            instant evaluation
+                        </span>
+                    </div>
 
-</small>
+                </div>
 
+            </div>
 
-<h2>
 
-{{ c.title }}
+            <div class="course-right">
 
-</h2>
+                <div class="fee-label">
+                    COURSE FEE
+                </div>
 
+                <div class="course-fee">
+                    ₹42,000
+                </div>
 
-<p>
+                <div class="course-students">
+                    Students in Class 12 /
+                    Intermediate 1st and 2nd year
+                </div>
 
-{{ c.description }}
+                <a href="#"
+                   class="course-button details-button">
+                    View course details
+                </a>
+
+                <a href="{{ url_for('register') }}"
+                   class="course-button enroll-button">
+                    Enroll Now
+                </a>
 
-</p>
+            </div>
 
+        </div>
 
-<button
-class="text-button"
-data-open-enroll
->
 
-Register interest →
+        <!-- =================================================
+             FOUNDATION
+        ================================================== -->
 
-</button>
+        <div class="course-card">
 
+            <div class="course-left">
 
-</div>
+                <span class="course-tag">
+                    Foundation
+                </span>
 
+                <h2>
+                    Foundation Programme —
+                    Classes 6–10
+                </h2>
 
-<div class="course-details">
+                <p class="course-description">
 
+                    An early-start programme that builds
+                    analytical thinking, olympiad-level
+                    reasoning and a strong base for JEE,
+                    NEET and EAPCET preparation.
 
-<small>
-DURATION
-</small>
+                </p>
 
-<strong>
-{{ c.duration }}
-</strong>
 
+                <div class="course-info">
 
-<small>
-DETAILS
-</small>
+                    <span>
+                        <span class="info-icon">◷</span>
+                        10 months per class
+                    </span>
 
-<strong>
-{{ c.start }}
-</strong>
+                    <span>
+                        <span class="info-icon">▣</span>
+                        Mathematics · Science · English ·
+                        Social Studies · Logical Reasoning
+                    </span>
 
-<strong>
-{{ c.fee }}
-</strong>
+                </div>
 
-<strong>
-{{ c.classes }}
-</strong>
 
+                <div class="course-features">
 
-<small>
-INCLUDES
-</small>
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            School syllabus support plus
+                            olympiad enrichment
+                        </span>
+                    </div>
 
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Weekly concept quizzes
+                        </span>
+                    </div>
 
-{% for item in c.includes %}
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Logical reasoning and mental
+                            ability training
+                        </span>
+                    </div>
 
-<span>
-✓ {{ item }}
-</span>
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Parent-teacher performance reviews
+                        </span>
+                    </div>
 
-{% endfor %}
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Structured reading and note-making
+                            habits
+                        </span>
+                    </div>
 
+                    <div class="course-feature">
+                        <span class="check">✓</span>
+                        <span>
+                            Small batch sizes
+                        </span>
+                    </div>
 
-</div>
+                </div>
 
+            </div>
 
-</article>
 
+            <div class="course-right">
 
-{% endfor %}
+                <div class="fee-label">
+                    COURSE FEE
+                </div>
 
+                <div class="course-fee">
+                    ₹28,000
+                </div>
+
+                <div class="course-students">
+                    Students of Class 6
+                    to Class 10
+                </div>
+
+                <a href="#"
+                   class="course-button details-button">
+                    View course details
+                </a>
+
+                <a href="{{ url_for('register') }}"
+                   class="course-button enroll-button">
+                    Enroll Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <div class="courses-cta">
+
+            <div>
+
+                <h2>
+                    Start your preparation today.
+                </h2>
+
+                <p>
+                    Choose the right programme and
+                    begin your academic journey with
+                    VIJAY Educational Services.
+                </p>
+
+            </div>
+
+            <a href="{{ url_for('register') }}"
+               class="cta-enroll">
+                Enroll Now →
+            </a>
+
+        </div>
+
+
+    </div>
 
 </section>
 

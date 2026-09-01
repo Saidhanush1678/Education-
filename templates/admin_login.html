@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Admin Login{% endblock %}
+{% block content %}
+<section class="login-page">
+    <form method="POST" class="login-card">
+        <span class="eyebrow">SECURE AREA</span>
+        <h1>Admin Login</h1>
+        <p>Access registrations, faculty applications and the Excel workbook.</p>
+        <label>Username<input type="text" name="username" required></label>
+        <label>Password<input type="password" name="password" required></label>
+        <button class="btn primary full" type="submit">Login</button>
+        <small>Default: admin / admin123. Change these using environment variables before deployment.</small>
+    </form>
+</section>
+{% endblock %}
